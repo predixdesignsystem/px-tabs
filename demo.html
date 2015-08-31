@@ -9,10 +9,16 @@
         <script src="../webcomponentsjs/webcomponents-lite.min.js"></script>
         <!-- Import custom element. Note: see comment about relative paths to dependencies in the *.html file referenced below -->
         <link rel="import" href="../polymer/polymer.html"/>
-        <link rel="import" href="../iron-pages/iron-pages.html"/>
         <link rel="import" href="px-tab-set.html"/>
         <link rel="import" href="px-tab.html"/>
+        <link rel="import" href="px-tab-pages.html"/>
         <link rel="import" href="demo-custom-tabs.html"/>
+
+        <style>
+          .tab-page {
+            margin: 5px;
+          }
+        </style>
     </head>
 
     <body>
@@ -28,7 +34,8 @@
             Also see the <a href="index.html">documentation</a> and the <a href="test/fixture.html">UI test fixture</a>.
         </p>
 
-          <h4>This is built using px-tab-set, px-tabs:</h4>
+        <!--
+        <h4>This is built using px-tab-set, px-tabs:</h4>
         <px-tab-set selected="{{selected}}">
           <px-tab>Bengal Tiger</px-tab>
           <px-tab>Black Spider Monkey</px-tab>
@@ -41,31 +48,57 @@
           <div>Three</div>
           <div>Four</div>
         </iron-pages>
+        -->
 
-        <iron-pages selected="contact" valueattr="data-category">
-          <section data-category="home">
-            <p>This is the Home section</p>
-          </section>
-          <section data-category="contact">
-            <p>This is the Contact section</p>
-          </section>
-        </iron-pages>
+        <h4>This is composed using px-tab-set, px-tabs, and px-tab-pages:</h4>
+        <template id="my-tabs" is="dom-bind">
+          <px-tab-set id="demo-tab-set" selected="{{selected}}">
+            <px-tab>Bengal Tiger</px-tab>
+            <px-tab>Black Spider Monkey</px-tab>
+            <px-tab>Sumatran Elephant</px-tab>
+            <px-tab>Ganges River Dolphin</px-tab>
+          </px-tab-set>
+          <px-tab-pages id="demo-tab-pages" selected={{selected}}>
+            <div class="tab-page">
+              <p>PX Tab Page One</p>
+              <p>Some interesting content goes here...</p>
+            </div>
+            <div class="tab-page">
+              <p>PX Tab Page Two</p>
+              <p>Cool stuff goes here...</p>
+            </div>
+            <div class="tab-page">
+              <p>PX Tab Page Three</p>
+              <p>Fun stuff goes here...</p>
+            </div>
+            <div class="tab-page">
+              <p>PX Tab Page Four</p>
+              <p>Exciting stuff goes here...</p>
+            </div>
+          </px-tab-pages>
+        </template>
 
-          <script>
-            var pages = document.querySelector('iron-pages');
-            var tabs = document.querySelector('px-tab-set');
+        <script>
+
+          var tmpl = document.querySelector('#my-tabs');
+
+          tmpl.addEventListener('dom-change', function() {
+            var pages = document.querySelector('#demo-tab-pages');
+            var tabs = document.querySelector('#demo-tab-set');
             tabs.addEventListener('iron-select', function(event) {
               console.log(event);
               pages.selected = tabs.selected;
-              //pages.selectNext();
             })
             pages.addEventListener('iron-select', function(event) {
               console.log('page select event');
             })
-          </script>
+            tmpl.selected = "0";
 
-          <h4>This is a Polymer component that implements a set of custom tabs:</h4>
-          <my-custom-tabs></my-custom-tabs>
+          });
+        </script>
+
+        <h4>This is a Polymer component that implements a set of custom tabs:</h4>
+        <my-custom-tabs></my-custom-tabs>
 
     </body>
 </html>

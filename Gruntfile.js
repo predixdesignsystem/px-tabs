@@ -14,26 +14,31 @@ module.exports = function (grunt) {
         },
 
         sass: {
-            options: {
-                importer: importOnce,
-                importOnce: {
-                  index: true,
-                  bower: true
-                }
-            },
-            tabSet: {
-                files: {
-                  'css/noprefix/px-tab-set-sketch.css': 'sass/px-tab-set-sketch.scss',
-                  'css/noprefix/px-tab-set.css': 'sass/px-tab-set-predix.scss'
-                }
-            },
-            tab: {
-                files: {
-                  'css/noprefix/px-tab-sketch.css': 'sass/px-tab-sketch.scss',
-                  'css/noprefix/px-tab.css':        'sass/px-tab-predix.scss'
-                }
+          options: {
+            importer: importOnce,
+            importOnce: {
+              index: true,
+              bower: true
             }
-	
+          },
+          tabSet: {
+            files: {
+              'css/noprefix/px-tab-set-sketch.css': 'sass/px-tab-set-sketch.scss',
+              'css/noprefix/px-tab-set.css': 'sass/px-tab-set-predix.scss'
+            }
+          },
+          tab: {
+            files: {
+              'css/noprefix/px-tab-sketch.css': 'sass/px-tab-sketch.scss',
+              'css/noprefix/px-tab.css':        'sass/px-tab-predix.scss'
+            }
+          },
+          tabPages: {
+            files: {
+              'css/noprefix/px-tab-pages-sketch.css': 'sass/px-tab-pages-sketch.scss',
+              'css/noprefix/px-tab-pages.css':        'sass/px-tab-pages-predix.scss'
+            }
+          }
         },
 
         autoprefixer: {

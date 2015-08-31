@@ -1,28 +1,39 @@
 <link rel="import" href="../polymer/polymer.html"/>
-<link rel="import" href="../iron-pages/iron-pages.html"/>
+<link rel="import" href="px-tab-set.html"/>
+<link rel="import" href="px-tab.html"/>
+<link rel="import" href="px-tab-pages.html"/>
 
 <dom-module id="my-custom-tabs">
-  <template>
-    <section is="auto-binding">
-      <px-tab-set selected="{{selected}}">
+  <template is="dom-bind">
+    <section>
+      <px-tab-set id="tab-set" selected="{{selected}}">
         <px-tab>Bengal Tiger</px-tab>
         <px-tab>Black Spider Monkey</px-tab>
         <px-tab>Sumatran Elephant</px-tab>
         <px-tab>Ganges River Dolphin</px-tab>
       </px-tab-set>
-      <iron-pages selected="{{selected}}">
+      <px-tab-pages selected="{{selected}}">
         <div>My Custom Tab 1 content</div>
         <div>My Custom Tab 2 content</div>
         <div>My Custom Tab 3 content</div>
+        <div>My Custom Tab 3 content</div>
         <div>My Custom Tab 4 content</div>
-      </iron-pages>
+      </px-tab-pages>
     </section>
   </template>
   <script>
     Polymer({
       is: 'my-custom-tabs',
       properties: {
-        selected: 0
+        selected: {
+          type: String,
+          reflect: true
+        }
+      },
+      ready: function() {
+        console.log('ready. ' + this.selected);
+        var tabs = document.querySelector('#tab-set');
+        this.selected = 0;
       }
     });
   </script>
