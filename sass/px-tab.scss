@@ -1,0 +1,33 @@
+$inuit-tab-namespace                    : $inuit-namespace !default;
+
+$inuit-tab-title-background             : $gray3 !default;
+$inuit-tab-title-background--selected   : $white !default;
+$inuit-tab-title-color                  : $black !default;
+$inuit-tab-title-color--selected        : $select-blue-default !default;
+$inuit-tab-title-border-color--selected : $gray6 !default;
+
+.#{$inuit-tab-namespace}tab-title,
+%#{$inuit-tab-namespace}tab-title {
+  height: 100%;
+  font: inherit;
+  text-align: center;
+  vertical-align: middle;
+  padding: 5px;
+  /*margin-left: 5px; */
+  margin-right: 5px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border: 0px;
+  background-color: $inuit-tab-title-background;
+  color: $inuit-tab-title-color;
+}
+
+.#{$inuit-tab-namespace}tab-title--selected,
+%#{$inuit-tab-namespace}tab-title--selected {
+  border: 1px solid $inuit-tab-title-border-color--selected;
+  border-bottom: none;
+  background-color: $inuit-tab-title-background--selected;
+  color: $inuit-tab-title-color--selected;
+  margin-bottom: -1px;
+}
+

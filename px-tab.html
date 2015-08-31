@@ -1,0 +1,63 @@
+
+<!--
+    Relative paths assume component is being run from inside an app or another component, where dependencies are flat
+    siblings. When this component is run from its own repo (e.g. ui tests, examples), we assume the server is started with
+    'grunt depserve' (or similar server setup) to enable correct finding of bower dependencies for local runs
+    See https://github.sw.ge.com/jreichenberg/grunt-dep-serve#why-do-we-need-this
+-->
+<link rel="import" href="../polymer/polymer.html"/>
+
+
+<!--
+The px-tab-set and px-tab components together provide the tabbed interface. The tabbed content is expected
+to be contained in a separate component.
+
+Note: There is no limit on number of tabs in the set, but there is no scrolling support.
+
+See <a href="#px-tab">px-tab</a> for more information about `px-tab`.
+
+##### Usage
+
+They are typically used together like this:
+  <px-tab-set selected={{selected}}>
+    <px-tab>Tab 1</px-tab>
+    <px-tab>Tab 2</px-tab>
+    <px-tab>Tab 3</px-tab>
+  </px-tab-set>
+  <iron-pages selected="{{selected}}>
+    <section>Tab 1 content</section>
+    <section>Tab 2 content</section>
+    <section>Tab 3 content</section>
+  </iron-pages>
+
+
+@element px-tab
+@blurb Element provides a single tab.
+@homepage index.html
+@demo demo.html
+-->
+<dom-module id="px-tab">
+    <link rel="import" type="css" href="css/px-tab.css"/>
+    <template>
+      <div class="tab-title">
+        <content></content>
+      </div>
+    </template>
+</dom-module>
+
+<script>
+    Polymer({
+
+        is: 'px-tab',
+
+        /**
+         * Properties block, expose attribute values to the DOM via 'reflect'
+         *
+         * @property properties
+         * @type Object
+         */
+        properties: {
+        },
+
+    });
+</script>

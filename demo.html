@@ -1,0 +1,71 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>px-tab-set Demo</title>
+        <!-- Requires Webcomponents.js polyfill is provided by the page for browsers that don't support html imports -->
+        <script src="../webcomponentsjs/webcomponents-lite.min.js"></script>
+        <!-- Import custom element. Note: see comment about relative paths to dependencies in the *.html file referenced below -->
+        <link rel="import" href="../polymer/polymer.html"/>
+        <link rel="import" href="../iron-pages/iron-pages.html"/>
+        <link rel="import" href="px-tab-set.html"/>
+        <link rel="import" href="px-tab.html"/>
+        <link rel="import" href="demo-custom-tabs.html"/>
+    </head>
+
+    <body>
+
+        <h3>Demo</h3>
+
+        <p>
+            Although related, examples are /not/ the same as the test fixtures.
+            Tests are tests, examples are examples.
+        </p>
+
+        <p>
+            Also see the <a href="index.html">documentation</a> and the <a href="test/fixture.html">UI test fixture</a>.
+        </p>
+
+          <h4>This is built using px-tab-set, px-tabs:</h4>
+        <px-tab-set selected="{{selected}}">
+          <px-tab>Bengal Tiger</px-tab>
+          <px-tab>Black Spider Monkey</px-tab>
+          <px-tab>Sumatran Elephant</px-tab>
+          <px-tab>Ganges River Dolphin</px-tab>
+        </px-tab-set>
+        <iron-pages selected="{{selected}}">
+          <div>One</div>
+          <div>Two</div>
+          <div>Three</div>
+          <div>Four</div>
+        </iron-pages>
+
+        <iron-pages selected="contact" valueattr="data-category">
+          <section data-category="home">
+            <p>This is the Home section</p>
+          </section>
+          <section data-category="contact">
+            <p>This is the Contact section</p>
+          </section>
+        </iron-pages>
+
+          <script>
+            var pages = document.querySelector('iron-pages');
+            var tabs = document.querySelector('px-tab-set');
+            tabs.addEventListener('iron-select', function(event) {
+              console.log(event);
+              pages.selected = tabs.selected;
+              //pages.selectNext();
+            })
+            pages.addEventListener('iron-select', function(event) {
+              console.log('page select event');
+            })
+          </script>
+
+          <h4>This is a Polymer component that implements a set of custom tabs:</h4>
+          <my-custom-tabs></my-custom-tabs>
+
+    </body>
+</html>
