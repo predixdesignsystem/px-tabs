@@ -6,13 +6,17 @@ $inuit-tab-title-color                  : $black !default;
 $inuit-tab-title-color--selected        : $select-blue-default !default;
 $inuit-tab-title-border-color--selected : $gray6 !default;
 
+:host {
+  @extend %flex;
+}
+
 .#{$inuit-tab-namespace}tab-title,
 %#{$inuit-tab-namespace}tab-title {
   height: 100%;
   font: inherit;
   text-align: center;
   vertical-align: middle;
-  padding: 5px;
+  padding: 10px;
   /*margin-left: 5px; */
   margin-right: 5px;
   border-top-left-radius: 4px;

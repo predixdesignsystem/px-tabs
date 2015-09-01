@@ -227,9 +227,6 @@ sub {
   bottom: -0.25em; }
 
 /*
-@import "px-tab.scss";
-*/
-/*
  * Copyright (c) 2014 GE Global Research. All rights reserved.
  *
  * The copyright to the computer software herein is the property of
@@ -595,7 +592,8 @@ html {
 .invisible {
   visibility: hidden !important; }
 
-.flex {
+.flex,
+:host {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex; }
@@ -761,7 +759,7 @@ html {
   font: inherit;
   text-align: center;
   vertical-align: middle;
-  padding: 5px;
+  padding: 10px;
   /*margin-left: 5px; */
   margin-right: 5px;
   border-top-left-radius: 4px;
