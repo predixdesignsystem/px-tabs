@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="../../webcomponentsjs/webcomponents.min.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+
+    <!-- Step 1: import the element to test -->
+    <link rel="import" href="../demo-custom-tabs.html">
+</head>
+<body>
+
+<!-- You use the document as a place to set up your fixtures. -->
+<demo-custom-tabs id="fixture-basic"></demo-custom-tabs>
+<script>
+  suite('<px-tabs>', function() {
+    test('Basic px-tabs Tests', function() {
+      var customTabs = document.getElementById('fixture-basic');
+      assert(customTabs != null);
+    });
+  });
+</script>
+
+</body>
+</html>
