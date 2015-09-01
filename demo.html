@@ -72,11 +72,11 @@
             var pages = document.querySelector('#demo-tab-pages');
             var tabs = document.querySelector('#demo-tab-set');
             tabs.addEventListener('iron-select', function(event) {
-              console.log(event);
+              //console.log(event);
               pages.selected = tabs.selected;
             })
             pages.addEventListener('iron-select', function(event) {
-              console.log('page select event');
+              //console.log('page select event');
             })
             tmpl.selected = "0";
 

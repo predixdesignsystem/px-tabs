@@ -75,7 +75,7 @@ They are typically used together like this:
       },
 
       _onResize: function() {
-        console.debug('onResize(): called');
+        //console.log('onResize(): called');
         this.debounce('_onResize', function() {
           this._scroll();
           this._tabChanged(this.selectedItem);
@@ -83,14 +83,14 @@ They are typically used together like this:
       },
 
       _onIronSelect: function(event) {
-        console.debug('onIronSelect: previous=' + this.items.indexOf(this._previousTab) + ' selected=' + this.items.indexOf(this.selected));
+        //console.log('onIronSelect: previous=' + this.items.indexOf(this._previousTab) + ' selected=' + this.items.indexOf(this.selected));
         this._tabChanged(event.detail.item, this._previousTab);
         this._previousTab = event.detail.item;
         this.cancelDebouncer('tab-changed');
       },
 
       _onIronDeselect: function(event) {
-        console.debug('onIronDeselect: previous=' + this.items.indexOf(this._previousTab) + ' selected=' + this.items.indexOf(this.selected));
+        //console.log('onIronDeselect: previous=' + this.items.indexOf(this._previousTab) + ' selected=' + this.items.indexOf(this.selected));
         this.debounce('tab-changed', function() {
           this._tabChanged(null, this._previousTab);
           // See polymer/polymer#1305
@@ -114,7 +114,7 @@ They are typically used together like this:
       },
 
       _tabChanged: function(tab, old) {
-        console.log('_tabChanged: old=' + old + ' new=' + tab);
+        //console.log('_tabChanged: old=' + old + ' new=' + tab);
         this._changeTabStyle(old, false);
         this._changeTabStyle(tab, true);
       },
