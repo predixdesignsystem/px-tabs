@@ -1,45 +1,63 @@
-<link rel="import" href="../polymer/polymer.html"/>
-<link rel="import" href="px-tab-set.html"/>
-<link rel="import" href="px-tab.html"/>
-<link rel="import" href="px-tab-pages.html"/>
+<!doctype html>
 
-<dom-module id="my-custom-tabs">
-  <template is="dom-bind">
-    <section>
-      <px-tab-set id="tab-set" selected="{{selected}}">
-        <px-tab>Bengal Tiger</px-tab>
-        <px-tab>Black Spider Monkey</px-tab>
-        <px-tab>Sumatran Elephant</px-tab>
-        <px-tab>Ganges River Dolphin</px-tab>
-      </px-tab-set>
-      <px-tab-pages selected="{{selected}}">
-        <div>
-          <p>The Bengal tiger is found primarily in India with smaller populations in Bangladesh, Nepal, Bhutan, China and Myanmar. It is the most
-            numerous of all tiger subspecies with more than 2,500 left in the wild. The creation of India’s tiger reserves in the 1970s helped to
-            stabilize numbers, but poaching to meet a growing demand from Asia in recent years has once again put the Bengal tiger at risk. The mangroves
-            of the Sundarbans—shared between Bangladesh and India—are the only mangrove forests where tigers are found. The Sundarbans are increasingly
-            threatened by sea level rise as a result of climate change.</p>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>px-tab-set Demo</title>
+        <!-- Requires Webcomponents.js polyfill is provided by the page for browsers that don't support html imports -->
+        <script src="../webcomponentsjs/webcomponents-lite.min.js"></script>
+        <!-- Import custom element. Note: see comment about relative paths to dependencies in the *.html file referenced below -->
+        <link rel="import" href="../polymer/polymer.html"/>
+        <link rel="import" href="demo-custom-tabs.html"/>
+
+        <style>
+          .tab-page {
+            margin: 5px;
+          }
+          .width25 {
+            width: 25%;
+          }
+          .width50 {
+            width: 50%;
+          }
+          .width100 {
+            width: 100%;
+          }
+        </style>
+    </head>
+
+    <body>
+
+        <h3>Demo</h3>
+
+        <p>
+            Although related, examples are /not/ the same as the test fixtures.
+            Tests are tests, examples are examples.
+        </p>
+
+        <p>
+            Also see the <a href="index.html">documentation</a> and the <a href="test/fixture.html">UI test fixture</a>.
+        </p>
+
+
+        <br><br>
+        <h4>This demonstrates Tabs using 25% of the window width</h4>
+        <div class="width25">
+          <demo-custom-tabs></demo-custom-tabs>
         </div>
-        <div><p>The black spider monkey—also known as the Guiana or red-faced spider monkey—is found in eastern South America in areas north of the Amazon River. They are one of seven species of spider monkeys found in Latin America and one of the largest primate species in South America.</p></div>
-        <div><p>Sumatran elephants feed on a variety of plants and deposit seeds wherever they go, contributing to a healthy forest ecosystem. They also share their lush forest habitat with several other endangered species, such as the Sumatran rhino, tiger, and orangutan, and countless other species that all benefit from an elephant population that thrives in a healthy habitat.</p></div>
-        <div>Dolphins are one of the oldest creatures in the world along with some species of turtles, crocodiles and sharks. The Ganges river dolphin was officially discovered in 1801. Ganges river dolphins once lived in the Ganges-Brahmaputra-Meghna and Karnaphuli-Sangu river systems of Nepal, India, and Bangladesh. But the species is extinct from most of its early distribution ranges.</div>
-      </px-tab-pages>
-    </section>
-  </template>
-  <script>
-    Polymer({
-      is: 'my-custom-tabs',
-      properties: {
-        selected: {
-          type: String,
-          reflect: true
-        }
-      },
-      ready: function() {
-        console.log('ready. ' + this.selected);
-        var tabs = document.querySelector('#tab-set');
-        this.selected = 0;
-      }
-    });
-  </script>
-</dom-module>
+
+        <br><br>
+        <h4>This demonstrates Tabs using 50% of the window width</h4>
+        <div class="width50">
+          <demo-custom-tabs></demo-custom-tabs>
+        </div>
+
+        <br><br>
+        <h4>This demonstrates Tabs using 100% of the window width</h4>
+        <div class="width100">
+            <demo-custom-tabs></demo-custom-tabs>
+        </div>
+
+    </body>
+</html>

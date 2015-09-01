@@ -3,26 +3,18 @@
 <link rel="import" href="px-tab.html"/>
 <link rel="import" href="px-tab-pages.html"/>
 
-<dom-module id="my-custom-tabs">
+<dom-module id="demo-no-tabs">
   <template is="dom-bind">
     <section>
       <px-tab-set id="tab-set" selected="{{selected}}">
-        <px-tab>Bengal Tiger</px-tab>
-        <px-tab>Black Spider Monkey</px-tab>
-        <px-tab>Sumatran Elephant</px-tab>
-        <px-tab>Ganges River Dolphin</px-tab>
       </px-tab-set>
       <px-tab-pages selected="{{selected}}">
-        <div>My Custom Tab 1 content</div>
-        <div>My Custom Tab 2 content</div>
-        <div>My Custom Tab 3 content</div>
-        <div>My Custom Tab 4 content</div>
       </px-tab-pages>
     </section>
   </template>
   <script>
     Polymer({
-      is: 'my-custom-tabs',
+      is: 'demo-no-tabs',
       properties: {
         selected: {
           type: String,
