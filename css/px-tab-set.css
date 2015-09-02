@@ -738,30 +738,23 @@ html {
           align-self: baseline; }
 
 .viewport {
-  width: 98%;
+  width: 100%;
   max-width: 80rem;
   margin-right: auto;
-  margin-left: auto;
-  padding-right: 1%;
-  padding-left: 1%; }
-  @media screen and (min-width: 80rem) {
-    .viewport {
-      width: 100%;
-      padding-right: 0;
-      padding-left: 0; } }
+  margin-left: auto; }
 
 .viewport--full-height {
   min-height: 100vh; }
 
 .tabs-container {
-  /*
-  display: flex;
-  flex-direction: row;
-  */
+  border: 0;
+  padding: 0; }
+
+.tabs-container__nav {
   font: inherit;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: -1px;
+  margin: 0;
+  padding-left: 10px;
+  padding-right: 10px;
   border-bottom: 1px solid #9999a3; }
 
 /*------------------------------------*    #CLEARFIX
@@ -1040,7 +1033,7 @@ html {
         -ms-flex: none !important;
             flex: none !important; } }
 
-@media screen and (max-width: 68.204166667rem) {
+@media screen and (max-width: 68.2rem) {
   .u-1\/1-portable {
     width: 100% !important; }
   .u-1\/2-portable {

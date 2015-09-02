@@ -39,11 +39,10 @@ They are typically used together like this:
 <dom-module id="px-tab-set">
     <link rel="import" type="css" href="css/px-tab-set.css"/>
     <template>
-      <div class="tabs-container flex">
-          <!-- TODO is select=* really necessary? -->
+      <div class="tabs-container">
+        <div class="tabs-container__nav flex">
           <content select="*"></content>
-      </div>
-      <div class="tabs-content">
+        </div>
       </div>
     </template>
 </dom-module>
@@ -57,14 +56,12 @@ They are typically used together like this:
        * Properties block, expose attribute values to the DOM via 'reflect'
        *
        * @property properties
-       * @type Object
+       * @type String
        */
       properties: {
         selected: {
           type: String,
-          //value: 0
           notify: true
-
         }
       },
 

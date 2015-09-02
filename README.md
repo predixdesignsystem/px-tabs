@@ -81,18 +81,6 @@ watch: {
 
 Does this component have runtime configuration options?  If so, they should be able to be passed as attributes on the element with examples shown below.
 
-### Function calls
-
-What is the public API of this component?
-
-### Extending styles
-
-Documented CSS extension points?
-
-### Extending behavior
-
-See Polymer composition patterns
-
 GE Coding Style Guide
 ---------------------
 
@@ -100,3 +88,5 @@ GE Coding Style Guide
 
 
 ### Known Issues
+
+This px-tabs components currently don't support in-component scrolling when there are too many tabs.

@@ -3,14 +3,15 @@ $inuit-tab-title-border-color--selected : $gray6 !default;
 
 .#{$inuit-tab-set-namespace}tabs-container,
 %#{$inuit-tab-set-namespace}tabs-container {
-  /*
-  display: flex;
-  flex-direction: row;
-  */
-  font: inherit;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: -1px;
-  border-bottom: 1px solid $inuit-tab-title-border-color--selected;
+  border: 0;
+  padding: 0;
+}
 
+.#{$inuit-tab-set-namespace}tabs-container__nav,
+%#{$inuit-tab-set-namespace}tabs-container__nav {
+  font: inherit;
+  margin: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-bottom: 1px solid $inuit-tab-title-border-color--selected;
 }
