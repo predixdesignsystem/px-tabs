@@ -18,17 +18,16 @@ See <a href="#px-tab">px-tab</a> for more information about `px-tab`.
 
 ##### Usage
 
-They are typically used together like this:
-  <px-tab-set selected={{selected}}>
-    <px-tab>Tab 1</px-tab>
-    <px-tab>Tab 2</px-tab>
-    <px-tab>Tab 3</px-tab>
-  </px-tab-set>
-  <iron-pages selected="{{selected}}>
-    <section>Tab 1 content</section>
-    <section>Tab 2 content</section>
-    <section>Tab 3 content</section>
-  </iron-pages>
+    <px-tab-set selected="{{selected}}">
+        <px-tab>Tab 1</px-tab>
+        <px-tab>Tab 2</px-tab>
+        <px-tab>Tab 3</px-tab>
+    </px-tab-set>
+    <px-tab-pages selected="{{selected}}">
+        <section>Tab 1 content</section>
+        <section>Tab 2 content</section>
+        <section>Tab 3 content</section>
+    </px-tab-pages>
 
 @element px-tabs
 @blurb Container for px-tab elements
