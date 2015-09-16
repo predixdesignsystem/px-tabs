@@ -1,6 +1,6 @@
 {
     "name": "px-tabs",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "main": [
         "px-tabs.html"
     ],
@@ -15,7 +15,7 @@
     ],
     "dependencies": {
         "polymer": "~1.0.0",
-        "px-theme": "https://github.build.ge.com/PXc/px-theme.git#~0.2.0",
+        "px-theme": "https://github.build.ge.com/PXc/px-theme.git#~0.3.0",
       	"iron-pages" : "PolymerElements/iron-pages"
     },
     "devDependencies": {
