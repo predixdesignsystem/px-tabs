@@ -1,0 +1,72 @@
+<link rel="import" href="../polymer/polymer.html"/>
+<link rel="import" href="../px-theme/px-theme.html"/>
+<link rel="import" href="px-tab-set.html"/>
+<link rel="import" href="px-tab.html"/>
+<link rel="import" href="px-tab-pages.html"/>
+
+<dom-module id="demo-too-many-tabs">
+  <template>
+    <section>
+      <px-tab-set id="tab-set" selected="{{selected}}">
+        <px-tab>Tab One</px-tab>
+        <px-tab>Tab Two</px-tab>
+        <px-tab>Tab Three</px-tab>
+        <px-tab>Tab Four</px-tab>
+        <px-tab>Tab Five</px-tab>
+        <px-tab>Tab Six</px-tab>
+        <px-tab>Tab Seven</px-tab>
+        <px-tab>Tab Eight</px-tab>
+        <px-tab>Tab Nine</px-tab>
+        <px-tab>Tab Ten</px-tab>
+        <px-tab>Tab Eleven</px-tab>
+        <px-tab>Tab Twelve</px-tab>
+        <px-tab>Tab Thirteen</px-tab>
+        <px-tab>Tab Fourteen</px-tab>
+        <px-tab>Tab Fifteen</px-tab>
+        <px-tab>Tab Sixteen</px-tab>
+        <px-tab>Tab Seventeen</px-tab>
+        <px-tab>Tab Eighteen</px-tab>
+        <px-tab>Tab Nineteen</px-tab>
+        <px-tab>Tab Twenty</px-tab>
+      </px-tab-set>
+      <px-tab-pages selected="{{selected}}">
+        <div>Contents for Tab 1 content</div>
+        <div>Contents for Tab 2 content</div>
+        <div>Contents for Tab 3 content</div>
+        <div>Contents for Tab 4 content</div>
+        <div>Contents for Tab 5 content</div>
+        <div>Contents for Tab 6 content</div>
+        <div>Contents for Tab 7 content</div>
+        <div>Contents for Tab 8 content</div>
+        <div>Contents for Tab 9 content</div>
+        <div>Contents for Tab 10 content</div>
+        <div>Contents for Tab 11 content</div>
+        <div>Contents for Tab 12 content</div>
+        <div>Contents for Tab 13 content</div>
+        <div>Contents for Tab 14 content</div>
+        <div>Contents for Tab 15 content</div>
+        <div>Contents for Tab 16 content</div>
+        <div>Contents for Tab 17 content</div>
+        <div>Contents for Tab 18 content</div>
+        <div>Contents for Tab 19 content</div>
+        <div>Contents for Tab 20 content</div>
+      </px-tab-pages>
+    </section>
+  </template>
+  <script>
+    Polymer({
+      is: 'demo-too-many-tabs',
+      properties: {
+        selected: {
+          type: String,
+          reflect: true
+        }
+      },
+      ready: function() {
+        console.log('ready. ' + this.selected);
+        var tabs = document.querySelector('#tab-set');
+        this.selected = 0;
+      }
+    });
+  </script>
+</dom-module>

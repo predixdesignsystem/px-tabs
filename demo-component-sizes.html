@@ -1,0 +1,60 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>px-tab-set Demo</title>
+        <!-- Requires Webcomponents.js polyfill is provided by the page for browsers that don't support html imports -->
+        <script src="../webcomponentsjs/webcomponents-lite.min.js"></script>
+        <!-- Import custom element. Note: see comment about relative paths to dependencies in the *.html file referenced below -->
+        <link rel="import" href="../polymer/polymer.html"/>
+        <link rel="import" href="../px-theme/px-theme.html"/>
+        <link rel="import" href="demo-custom-tabs.html"/>
+
+        <style>
+          .tab-page {
+            margin: 5px;
+          }
+          .width25 {
+            width: 25%;
+          }
+          .width50 {
+            width: 50%;
+          }
+          .width100 {
+            width: 100%;
+          }
+          .font-small {
+            font-size: 12px;
+          }
+        </style>
+    </head>
+
+    <body>
+
+        <h3>Demo</h3>
+
+        <p>
+            Although related, examples are /not/ the same as the test fixtures.
+            Tests are tests, examples are examples.
+        </p>
+
+        <p>
+            Also see the <a href="index.html">documentation</a> and the <a href="test/fixture.html">UI test fixture</a>.
+        </p>
+
+        <br><br>
+        <h4>This demonstrates Tabs using 50% of the window width</h4>
+        <div class="width50 font-small">
+          <demo-custom-tabs></demo-custom-tabs>
+        </div>
+
+        <br><br>
+        <h4>This demonstrates Tabs using 100% of the window width</h4>
+        <div class="width100">
+            <demo-custom-tabs></demo-custom-tabs>
+        </div>
+
+    </body>
+</html>

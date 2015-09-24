@@ -1,0 +1,54 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>px-tab-set Demo</title>
+        <!-- Requires Webcomponents.js polyfill is provided by the page for browsers that don't support html imports -->
+        <script src="../webcomponentsjs/webcomponents-lite.min.js"></script>
+        <!-- Import custom element. Note: see comment about relative paths to dependencies in the *.html file referenced below -->
+        <link rel="import" href="../polymer/polymer.html"/>
+        <link rel="import" href="../px-theme/px-theme.html"/>
+        <link rel="import" href="demo-custom-tabs.html"/>
+
+        <style>
+          .tab-page {
+            margin: 5px;
+          }
+          .font-small {
+            font-size: 10px;
+          }
+          .font-big {
+            font-size: 20px;
+          }
+        </style>
+    </head>
+
+    <body>
+
+        <h3>Demo</h3>
+
+        <p>
+            Although related, examples are /not/ the same as the test fixtures.
+            Tests are tests, examples are examples.
+        </p>
+
+        <p>
+            Also see the <a href="index.html">documentation</a> and the <a href="test/fixture.html">UI test fixture</a>.
+        </p>
+
+        <br><br>
+        <h4>This demonstrates Tabs using small font</h4>
+        <div class="font-small">
+          <demo-custom-tabs></demo-custom-tabs>
+        </div>
+
+        <br><br>
+        <h4>This demonstrates Tabs using big font</h4>
+        <div class="font-big">
+            <demo-custom-tabs></demo-custom-tabs>
+        </div>
+
+    </body>
+</html>

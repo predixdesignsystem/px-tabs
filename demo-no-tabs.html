@@ -1,0 +1,32 @@
+<link rel="import" href="../polymer/polymer.html"/>
+<link rel="import" href="../px-theme/px-theme.html"/>
+<link rel="import" href="px-tab-set.html"/>
+<link rel="import" href="px-tab.html"/>
+<link rel="import" href="px-tab-pages.html"/>
+
+<dom-module id="demo-no-tabs">
+  <template is="dom-bind">
+    <section>
+      <px-tab-set id="tab-set" selected="{{selected}}">
+      </px-tab-set>
+      <px-tab-pages selected="{{selected}}">
+      </px-tab-pages>
+    </section>
+  </template>
+  <script>
+    Polymer({
+      is: 'demo-no-tabs',
+      properties: {
+        selected: {
+          type: String,
+          reflect: true
+        }
+      },
+      ready: function() {
+        console.log('ready. ' + this.selected);
+        var tabs = document.querySelector('#tab-set');
+        this.selected = 0;
+      }
+    });
+  </script>
+</dom-module>
