@@ -1,6 +1,6 @@
 {
     "name": "px-tabs",
-    "version": "0.0.6",
+    "version": "0.1.0",
     "main": [
         "px-tabs.html"
     ],
@@ -14,12 +14,12 @@
         "test"
     ],
     "dependencies": {
-        "polymer": "~1.0.0",
-        "px-theme": "https://github.com/PredixDev/px-theme.git#~0.3.0",
+        "polymer": "~1.2.3",
+        "px-theme": "https://github.com/PredixDev/px-theme.git#~0.4.0",
       	"iron-pages" : "PolymerElements/iron-pages"
     },
     "devDependencies": {
-      "iron-component-page" : "PolymerElements/iron-component-page#~v1.0.0",
+      "iron-component-page" : "PolymerElements/iron-component-page#~v1.1.0",
       "px-starter-kit-design": "https://github.com/PredixDev/px-starter-kit-design.git#~0.4.0",
       "web-component-tester": "~3.3.14"
     }
