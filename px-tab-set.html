@@ -114,17 +114,7 @@ See <a href="#px-tab">px-tab</a> for more information about `px-tab`.
         this._changeTabStyle(old, false);
         this._changeTabStyle(tab, true);
 
-        this.fire('tabChanged', this._getTabIndex(tab), tab.id);
-      },
-
-      _getTabIndex: function(tab) {
-        var tabs = tab.parentElement.children;
-        for (var i = 0; i < tabs.length; i++) {
-          if (tabs[i] == tab) {
-            return i;
-          }
-        }
-        return -1;
+        this.fire('tabChanged', tab.id);
       },
 
       behaviors: [
