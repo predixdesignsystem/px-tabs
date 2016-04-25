@@ -39,7 +39,7 @@ See <a href="#px-tab">px-tab</a> for more information about `px-tab`.
     <link rel="import" type="css" href="css/px-tab-set.css"/>
     <template>
       <div class="tabs-container">
-        <div class="tabs-container__nav flex">
+        <div class$="{{_setTabSetClass(bare)}} flex" id="el-tab-set">
           <content select="*"></content>
         </div>
       </div>
@@ -61,13 +61,34 @@ See <a href="#px-tab">px-tab</a> for more information about `px-tab`.
         selected: {
           type: String,
           notify: true
-        }
+        },
+
+        /**
+         * Use the bare attribute underlined styles in the tabs (instead of the default squared tabs)
+         *
+         *      <px-tab-set bare></px-tab-set>
+         *
+         * @default false
+         */
+        bare: {
+          type: Boolean,
+          value: false
+        },
       },
 
       listeners: {
         'iron-resize': '_onResize',
         'iron-select': '_onIronSelect',
         'iron-deselect': '_onIronDeselect'
+      },
+
+      _setTabSetClass: function(setBare) {
+
+          if(setBare){
+              return "tabs-container__nav--bare";
+          }
+          
+          return "tabs-container__nav";
       },
 
       _onResize: function() {
@@ -95,17 +116,27 @@ See <a href="#px-tab">px-tab</a> for more information about `px-tab`.
 
       _changeTabStyle: function(tab, selectedStyle) {
         //var tabEl = tab.$.tabElId;  // the div element inside the tab
+        var constructedClass = "tab-title";
+
+        //check if configured with bare styles
         if (tab) {
-          var tabEl = tab.querySelector('.tab-title');
+          if (this.bare){
+            constructedClass = constructedClass + '-bare';
+          }
+
+          var constructedClassMod =  constructedClass + '--selected';
+          var tabEl = tab.querySelector('.' + constructedClass);
+
           if (tabEl) {
             var cl = tabEl.classList;
-            if (selectedStyle && !cl.contains('tab-title--selected')) {
-              cl.add('tab-title--selected');
+            if (selectedStyle && !cl.contains(constructedClassMod)) {
+              cl.add(constructedClassMod);
             }
-            else if (!selectedStyle && cl.contains('tab-title--selected')) {
-              cl.remove('tab-title--selected');
+            else if (!selectedStyle && cl.contains(constructedClassMod)) {
+              cl.remove(constructedClassMod);
             }
           }
+
         }
       },
 

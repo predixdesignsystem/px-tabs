@@ -13,6 +13,7 @@
         <link rel="import" href="px-tab-set.html"/>
         <link rel="import" href="px-tab.html"/>
         <link rel="import" href="px-tab-pages.html"/>
+        <link rel="import" href="demo-bare-tabs.html"/>
         <link rel="import" href="demo-custom-tabs.html"/>
         <link rel="import" href="demo-too-many-tabs.html"/>
 
@@ -85,8 +86,61 @@
         </script>
 
         <br><br>
+        <h4>Example using px-tab-set bare option: &lt;px-tab-set bare ...&gt;</h4>
+
+        <template id="my-tabs-bare" is="dom-bind">
+          <px-tab-set bare id="demo-tab-set-bare" selected="{{selected}}">
+            <px-tab>Bengal Tiger</px-tab>
+            <px-tab>Black Spider Monkey</px-tab>
+            <px-tab>Sumatran Elephant</px-tab>
+            <px-tab>Ganges River Dolphin</px-tab>
+          </px-tab-set>
+          <px-tab-pages id="demo-tab-pages-bare" selected={{selected}}>
+            <div class="tab-page">
+              <p>PX Tab Page One</p>
+              <p>Some interesting content goes here...</p>
+            </div>
+            <div class="tab-page">
+              <p>PX Tab Page Two</p>
+              <p>Cool stuff goes here...</p>
+            </div>
+            <div class="tab-page">
+              <p>PX Tab Page Three</p>
+              <p>Fun stuff goes here...</p>
+            </div>
+            <div class="tab-page">
+              <p>PX Tab Page Four</p>
+              <p>Exciting stuff goes here...</p>
+            </div>
+          </px-tab-pages>
+        </template>
+
+        <script>
+
+          var tmpl2 = document.querySelector('#my-tabs-bare');
+
+          tmpl2.addEventListener('dom-change', function() {
+            var pages2 = document.querySelector('#demo-tab-pages-bare');
+            var tabs2 = document.querySelector('#demo-tab-set-bare');
+            tabs2.addEventListener('iron-select', function(event) {
+              //console.log(event);
+              pages2.selected = tabs2.selected;
+            })
+            pages2.addEventListener('iron-select', function(event) {
+              //console.log('page select event');
+            })
+            tmpl2.selected = "0";
+
+          });
+        </script>
+
+        <br><br>
         <h4>This is a Polymer component that implements a set of custom tabs:</h4>
         <demo-custom-tabs></demo-custom-tabs>
+
+        <br><br>
+        <h4>This is a Polymer component that implements a set of custom tabs with the bare option</h4>
+        <demo-bare-tabs></demo-bare-tabs>
 
         <br><br>
         <h4>This demonstrates no tabs specified in the tab set (nothing will be rendered)</h4>

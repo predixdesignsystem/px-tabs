@@ -39,7 +39,7 @@ They are typically used together like this:
 <dom-module id="px-tab">
     <link rel="import" type="css" href="css/px-tab.css"/>
     <template>
-      <div class="tab-title">
+      <div class$="{{_setTabTitleClass()}}">
         <content></content>
       </div>
     </template>
@@ -57,6 +57,17 @@ They are typically used together like this:
          * @type Object
          */
         properties: {
+        },
+
+         _setTabTitleClass: function() {
+
+          var tabSet = Polymer.dom(this).parentNode.parentNode.querySelector('#el-tab-set');
+          if (tabSet.classList.contains('tabs-container__nav--bare')) {
+             return "tab-title-bare";
+          }
+
+          return "tab-title";
+          
         },
 
     });
