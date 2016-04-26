@@ -113,6 +113,8 @@ See <a href="#px-tab">px-tab</a> for more information about `px-tab`.
         //console.log('_tabChanged: old=' + old + ' new=' + tab);
         this._changeTabStyle(old, false);
         this._changeTabStyle(tab, true);
+
+        this.fire('tabChanged', tab.id);
       },
 
       behaviors: [
