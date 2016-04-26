@@ -108,6 +108,8 @@ See <a href="#px-tab">px-tab</a> for more information about `px-tab`.
       _tabChanged: function(tab, old) {
         this._changeTabStyle(old, false);
         this._changeTabStyle(tab, true);
+        //raises an event when tab changes, if it has an ID it sends it along.
+        this.fire('px-tab-changed', {'tabID':tab.id});
       },
 
       behaviors: [
