@@ -71,7 +71,6 @@ See <a href="#px-tab">px-tab</a> for more information about `px-tab`.
       },
 
       _onResize: function() {
-        //console.log('onResize(): called');
         this.debounce('_onResize', function() {
           this._scroll();
           this._tabChanged(this.selectedItem);
@@ -79,14 +78,12 @@ See <a href="#px-tab">px-tab</a> for more information about `px-tab`.
       },
 
       _onIronSelect: function(event) {
-        //console.log('onIronSelect: previous=' + this.items.indexOf(this._previousTab) + ' selected=' + this.items.indexOf(this.selected));
         this._tabChanged(event.detail.item, this._previousTab);
         this._previousTab = event.detail.item;
         this.cancelDebouncer('tab-changed');
       },
 
       _onIronDeselect: function(event) {
-        //console.log('onIronDeselect: previous=' + this.items.indexOf(this._previousTab) + ' selected=' + this.items.indexOf(this.selected));
         this.debounce('tab-changed', function() {
           this._tabChanged(null, this._previousTab);
           // See polymer/polymer#1305
@@ -94,7 +91,6 @@ See <a href="#px-tab">px-tab</a> for more information about `px-tab`.
       },
 
       _changeTabStyle: function(tab, selectedStyle) {
-        //var tabEl = tab.$.tabElId;  // the div element inside the tab
         if (tab) {
           var tabEl = tab.querySelector('.tab-title');
           if (tabEl) {
@@ -110,11 +106,8 @@ See <a href="#px-tab">px-tab</a> for more information about `px-tab`.
       },
 
       _tabChanged: function(tab, old) {
-        //console.log('_tabChanged: old=' + old + ' new=' + tab);
         this._changeTabStyle(old, false);
         this._changeTabStyle(tab, true);
-
-        this.fire('tabChanged', tab.id);
       },
 
       behaviors: [
