@@ -6,6 +6,8 @@
     See https://github.com/jreichenberg/grunt-dep-serve#why-do-we-need-this
 -->
 <link rel="import" href="../polymer/polymer.html"/>
+<link rel="import" href="px-tab.html"/>
+<link rel="import" href="px-tab-pages.html"/>
 <link rel="import" href="../iron-selector/iron-selectable.html"/>
 
 <!--
@@ -14,10 +16,9 @@ to be contained in a separate component.
 
 Note: There is no limit on number of tabs in the set, but there is no scrolling support.
 
-See <a href="#px-tab">px-tab</a> for more information about `px-tab`.
 
 ##### Usage
-
+```
     <px-tab-set selected="{{selected}}">
         <px-tab>Tab 1</px-tab>
         <px-tab>Tab 2</px-tab>
@@ -28,8 +29,8 @@ See <a href="#px-tab">px-tab</a> for more information about `px-tab`.
         <section>Tab 2 content</section>
         <section>Tab 3 content</section>
     </px-tab-pages>
-
-@element px-tabs
+```
+@element px-tab-set
 @blurb Container for px-tab elements
 @homepage index.html
 @demo demo.html
@@ -69,27 +70,48 @@ See <a href="#px-tab">px-tab</a> for more information about `px-tab`.
         'iron-select': '_onIronSelect',
         'iron-deselect': '_onIronDeselect'
       },
-
+      /**
+       * This method debounces the resize action, and calls the _scroll and the _tabChanged methods
+       *
+       * @method {_onResize}
+       *
+       */
       _onResize: function() {
         this.debounce('_onResize', function() {
           this._scroll();
           this._tabChanged(this.selectedItem);
         }, 10);
       },
-
+      /**
+       * this method changes the tab and cancels the tab-changed debounce
+       *
+       * @method {_onIronSelect}
+       * @param {event}
+       */
       _onIronSelect: function(event) {
         this._tabChanged(event.detail.item, this._previousTab);
         this._previousTab = event.detail.item;
         this.cancelDebouncer('tab-changed');
       },
-
+      /**
+       * this method debounces calls to the _tabChanged method
+       *
+       * @method {_onIronDeselect}
+       * @param {event}
+       */
       _onIronDeselect: function(event) {
         this.debounce('tab-changed', function() {
           this._tabChanged(null, this._previousTab);
           // See polymer/polymer#1305
         }, 1);
       },
-
+      /**
+       * this method either removes or adds different styles to the tab.
+       *
+       * @method {_changeTabStyle}
+       * @param {selectedStyle}
+       * @param {tab}
+       */
       _changeTabStyle: function(tab, selectedStyle) {
         if (tab) {
           var tabEl = tab.querySelector('.tab-title');
@@ -104,7 +126,13 @@ See <a href="#px-tab">px-tab</a> for more information about `px-tab`.
           }
         }
       },
-
+      /**
+       * this method sets the style on the old tab to false, and
+       * the new tab to true,
+       * @method {_tabChanged}
+       * @param {old}
+       * @param {tab}
+       */
       _tabChanged: function(tab, old) {
         this._changeTabStyle(old, false);
         this._changeTabStyle(tab, true);
