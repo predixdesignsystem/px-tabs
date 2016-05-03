@@ -39,7 +39,7 @@ They are typically used together like this:
 <dom-module id="px-tab">
     <link rel="import" type="css" href="css/px-tab.css"/>
     <template>
-      <div class$="{{_setTabTitleClass()}}">
+      <div class$="{{_setTabTitleClass(bare)}}" id="tabtitle">
         <content></content>
       </div>
     </template>
@@ -57,8 +57,31 @@ They are typically used together like this:
          * @type Object
          */
         properties: {
+
+            /**
+           * Use the bare attribute underlined styles in the tabs (instead of the default squared tabs)
+           *
+           *      <px-tab bare></px-tab>
+           *
+           * @default false
+           */
+          bare: {
+            type: Boolean,
+            value: false
+          },
+
         },
 
+        _setTabTitleClass: function(setBare) {
+
+          if(setBare){
+              return "tab-title-bare";
+          }
+          return "tab-title";
+          
+        },
+
+        /*
          _setTabTitleClass: function() {
 
           var tabSet = Polymer.dom(this).parentNode.parentNode.querySelector('#el-tab-set');
@@ -69,6 +92,8 @@ They are typically used together like this:
           return "tab-title";
           
         },
+
+        */
 
     });
 </script>

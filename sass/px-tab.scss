@@ -46,11 +46,13 @@ div.#{$inuit-tab-namespace}tab-title--selected,
   padding-bottom: 0.2em;
   margin-right: 30px;
   color: $inuit-tab-title-color-bare;
+
+  &:hover,
+  &--selected {
+    color: $inuit-tab-title-color--selected;
+    border-bottom: 1px solid $inuit-tab-title-color--selected;
+  }
+  
 }
 
-div.#{$inuit-tab-namespace}tab-title-bare--selected,
-%#{$inuit-tab-namespace}tab-title-bare--selected {
-  color: $inuit-tab-title-color--selected;
-  border-bottom: 1px solid $inuit-tab-title-color--selected;
-}
 

@@ -7,6 +7,7 @@
 
     <!-- Step 1: import the element to test -->
     <link rel="import" href="../demo-custom-tabs.html">
+    <link rel="import" href="../demo-bare-tabs.html"/>
 </head>
 <body>
 
@@ -18,6 +19,89 @@
       var customTabs = document.getElementById('fixture-basic');
       assert(customTabs != null);
     });
+
+    test('Bare property for component should be false', function() {
+      var tabs = document.getElementById('fixture-basic');
+      var c = tabs.childNodes[1].childNodes[1].bare;
+      assert(c != true);
+      
+    });
+
+    test('Tab set should NOT include bare class modifier', function() {
+      var tabset = document.getElementById('fixture-basic');
+      var cl = tabset.childNodes[1].childNodes[1].classList.contains('tabs-container__nav--bare');
+
+      assert(cl != true);
+      
+    });
+
+    test('Tab title should NOT include bare class modifier', function() {
+      var tt = document.getElementById('fixture-basic').childNodes[1].childNodes[1];
+      var cl = tt.childNodes[1].childNodes[1].classList.contains('tab-title-bare');
+
+      assert(cl != true);
+      
+    });
+
+    test('Selected Tab title should include class tab-title-bare--selected', function() {
+      var tt = document.getElementById('fixture-basic').childNodes[1].childNodes[1].childNodes[1];
+
+      var cl = tt.classList.contains('iron-selected');
+
+      if (tt.classList.contains('iron-selected')){
+          cl = tt.childNodes[1].classList.contains('tab-title--selected');
+          assert(cl == true);
+      }
+      
+    });
+
+  });
+</script>
+
+<demo-bare-tabs id="mytabs-bare"></demo-bare-tabs>
+<script>
+  suite('<px-tab-set>', function() {
+
+    test('Bare styles px-tabs Tests', function() {
+      var customTabsBare = document.getElementById('mytabs-bare');
+      assert(customTabsBare != null);
+    });
+
+    test('Bare property for component should be true', function() {
+      var tabs = document.getElementById('mytabs-bare');
+      var c = tabs.childNodes[1].childNodes[1].bare;
+      assert(c == true);
+      
+    });
+
+    test('Tab set should includes bare class modifier', function() {
+      var tabset = document.getElementById('tab-set-bare');
+      var cl = tabset.childNodes[1].childNodes[1].classList.contains('tabs-container__nav--bare');
+
+      assert(cl == true);
+      
+    });
+
+    test('Tab title should include bare class modifier', function() {
+      var tt = document.getElementById('tab-set-bare').childNodes[1].childNodes[1];
+      var cl = tt.childNodes[1].childNodes[1].classList.contains('tab-title-bare');
+
+      assert(cl == true);
+      
+    });
+
+    test('Selected Tab title should include class tab-title-bare--selected', function() {
+      var tt = document.getElementById('tab-set-bare').childNodes[1].childNodes[1].childNodes[1];
+
+      var cl = tt.classList.contains('iron-selected');
+
+      if (tt.classList.contains('iron-selected')){
+          cl = tt.childNodes[1].classList.contains('tab-title-bare--selected');
+          assert(cl == true);
+      }
+      
+    });
+
   });
 </script>
 

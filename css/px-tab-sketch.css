@@ -611,10 +611,9 @@ div.tab-title--selected {
   padding-bottom: 0.2em;
   margin-right: 30px;
   color: #7c7c84; }
-
-div.tab-title-bare--selected {
-  color: #0a9ec1;
-  border-bottom: 1px solid #0a9ec1; }
+  .tab-title-bare:hover, .tab-title-bare--selected {
+    color: #0a9ec1;
+    border-bottom: 1px solid #0a9ec1; }
 
 /*------------------------------------*    #CLEARFIX
 \*------------------------------------*/
