@@ -1,9 +1,9 @@
 <!doctype html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <script src="../../webcomponentsjs/webcomponents.min.js"></script>
-    <script src="../../web-component-tester/browser.js"></script>
+  <head>
+      <meta charset="utf-8">
+      <script src="../../webcomponentsjs/webcomponents.min.js"></script>
+      <script src="../../web-component-tester/browser.js"></script>
 
     <!-- Step 1: import the element to test -->
     <link rel="import" href="../demo-custom-tabs.html">
@@ -19,6 +19,17 @@
       var customTabs = document.getElementById('fixture-basic');
       assert(customTabs != null);
     });
+
+    test('Test change tab event fires', function(done) {
+          var customTabs = Polymer.dom(document).querySelector('#fixture-basic'),
+              tabs = Polymer.dom(customTabs.root).querySelectorAll('px-tab');
+
+          document.addEventListener('px-tab-changed', function(evt){
+            assert.equal(evt.detail.tabID, 'tab2');
+            done();
+          });
+          tabs[1].click();
+        });
 
     test('Bare property for component should be false', function() {
       var tabs = document.getElementById('fixture-basic');
