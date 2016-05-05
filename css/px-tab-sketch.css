@@ -593,7 +593,8 @@ a {
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   background: #e4e4ea;
-  color: black; }
+  color: black;
+  cursor: pointer; }
 
 div.tab-title--selected {
   background-color: white;
@@ -601,19 +602,26 @@ div.tab-title--selected {
   border: 1px solid #9999a3;
   margin-bottom: -1px;
   padding-bottom: 1px;
-  border-bottom-width: 0; }
+  border-bottom-width: 0;
+  cursor: pointer; }
 
 .tab-title-bare {
   line-height: 1.3;
   font: inherit;
   text-align: center;
   vertical-align: middle;
-  padding-bottom: 0.2em;
+  padding-bottom: 0.3em;
   margin-right: 30px;
-  color: #7c7c84; }
-  .tab-title-bare:hover, .tab-title-bare--selected {
+  color: #525156;
+  cursor: pointer; }
+  .tab-title-bare:hover {
     color: #0a9ec1;
-    border-bottom: 1px solid #0a9ec1; }
+    border-bottom: 1px solid transparent;
+    cursor: pointer; }
+  .tab-title-bare--selected, .tab-title-bare--selected:hover {
+    color: #0a9ec1;
+    border-bottom: 1px solid #0a9ec1;
+    cursor: pointer; }
 
 /*------------------------------------*    #CLEARFIX
 \*------------------------------------*/

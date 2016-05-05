@@ -14,13 +14,14 @@
 <!-- You use the document as a place to set up your fixtures. -->
 <demo-custom-tabs id="fixture-basic"></demo-custom-tabs>
 <script>
-  suite('<px-tabs>', function() {
 
-    // variables for tests default settings
-    var tabset = Polymer.dom(document).querySelector('#fixture-basic'),
+/*  var tabset = Polymer.dom(document).querySelector('#fixture-basic'),
         tsetnode = Polymer.dom(tabset.root).querySelector('px-tab-set#tab-set'),
         tabnode = Polymer.dom(tabset.root).querySelector('px-tab#tab1'),
         tabnode2 = Polymer.dom(tabset.root).querySelector('px-tab#tab2');
+      */
+
+  suite('<px-tabs>', function() {
 
     test('Basic px-tabs Tests', function() {
       var customTabs = document.getElementById('fixture-basic');
@@ -39,12 +40,18 @@
         });
 
     test('Test bare property for basic tabs is false', function() {
-     
+        var tabset = Polymer.dom(document).querySelector('#fixture-basic'),
+            tsetnode = Polymer.dom(tabset.root).querySelector('px-tab-set#tab-set');
+
         assert.equal(tsetnode.bare , false);   
       
     });
 
     test('Test tab container style class does NOT include --bare', function() {
+
+      var tabset = Polymer.dom(document).querySelector('#fixture-basic'),
+          tsetnode = Polymer.dom(tabset.root).querySelector('px-tab-set#tab-set'),
+          tabnode = Polymer.dom(tabset.root).querySelector('px-tab#tab1');
 
       var cl = tabnode.parentNode.classList.contains('tabs-container__nav');
         assert.equal(cl , true);
@@ -53,6 +60,10 @@
 
     test('Test tab style matches default class tab-title', function() {
 
+        var tabset = Polymer.dom(document).querySelector('#fixture-basic'),
+            tsetnode = Polymer.dom(tabset.root).querySelector('px-tab-set#tab-set'),
+            tabnode = Polymer.dom(tabset.root).querySelector('px-tab#tab1');
+
           var c = tabnode.childNodes[1].classList.contains('tab-title');
 
         assert.equal(c , true);
@@ -60,6 +71,11 @@
     });
 
     test('Selected Tab title should include class tab-title--selected', function() {
+
+      var tabset = Polymer.dom(document).querySelector('#fixture-basic'),
+        tsetnode = Polymer.dom(tabset.root).querySelector('px-tab-set#tab-set'),
+        tabnode = Polymer.dom(tabset.root).querySelector('px-tab#tab1'),
+        tabnode2 = Polymer.dom(tabset.root).querySelector('px-tab#tab2');
 
       var cl = tabnode2.classList.contains('iron-selected'),
           c = tabnode2.childNodes[1].classList.contains('tab-title--selected');
@@ -74,13 +90,16 @@
 <br>
 <demo-bare-tabs id="mytabs-bare"></demo-bare-tabs>
 <script>
-  suite('<px-tab-set>', function() {
 
-    // variables for tests bare settings
-    var tabset = Polymer.dom(document).querySelector('#mytabs-bare'),
+// variables for tests bare settings
+   /* var tabset = Polymer.dom(document).querySelector('#mytabs-bare'),
         tsetnode = Polymer.dom(tabset.root).querySelector('px-tab-set#tab-set-bare'),
         tabnode = Polymer.dom(tabset.root).querySelector('px-tab#tab1-bare'),
         tabnode2 = Polymer.dom(tabset.root).querySelector('px-tab#tab2-bare');
+
+        */
+
+  suite('<px-tab-set>', function() {
 
     test('Bare styles px-tabs Tests', function() {
       var customTabsBare = document.getElementById('mytabs-bare');
@@ -89,11 +108,18 @@
 
     test('Test bare property is true when bare is enabled', function() {
      
+        var tabset = Polymer.dom(document).querySelector('#mytabs-bare'),
+        tsetnode = Polymer.dom(tabset.root).querySelector('px-tab-set#tab-set-bare');
+
         assert.equal(tsetnode.bare , true);   
       
     });
 
     test('Test tab container style class includes --bare', function() {
+
+      var tabset = Polymer.dom(document).querySelector('#mytabs-bare'),
+        tsetnode = Polymer.dom(tabset.root).querySelector('px-tab-set#tab-set-bare'),
+        tabnode = Polymer.dom(tabset.root).querySelector('px-tab#tab1-bare');
 
       var cl = tabnode.parentNode.classList.contains('tabs-container__nav--bare');
         assert.equal(cl , true);
@@ -102,6 +128,10 @@
 
     test('Test tab style class is enabled with bare tabs: tab-title-bare', function() {
 
+          var tabset = Polymer.dom(document).querySelector('#mytabs-bare'),
+              tsetnode = Polymer.dom(tabset.root).querySelector('px-tab-set#tab-set-bare'),
+              tabnode = Polymer.dom(tabset.root).querySelector('px-tab#tab1-bare');
+
           var c = tabnode.childNodes[1].classList.contains('tab-title-bare');
 
         assert.equal(c , true);
@@ -109,6 +139,10 @@
     });
 
     test('Test selected Tab title class includes class modifier --selected', function() {
+
+      var tabset = Polymer.dom(document).querySelector('#mytabs-bare'),
+        tsetnode = Polymer.dom(tabset.root).querySelector('px-tab-set#tab-set-bare'),
+        tabnode = Polymer.dom(tabset.root).querySelector('px-tab#tab1-bare');
 
       var cl = tabnode.classList.contains('iron-selected'),
           c = tabnode.childNodes[1].classList.contains('tab-title-bare--selected');
