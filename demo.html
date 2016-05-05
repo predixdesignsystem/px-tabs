@@ -13,6 +13,7 @@
         <link rel="import" href="px-tab-set.html"/>
         <link rel="import" href="px-tab.html"/>
         <link rel="import" href="px-tab-pages.html"/>
+        <link rel="import" href="demo-bare-tabs.html"/>
         <link rel="import" href="demo-custom-tabs.html"/>
         <link rel="import" href="demo-too-many-tabs.html"/>
 
@@ -45,7 +46,7 @@
             <px-tab>Sumatran Elephant</px-tab>
             <px-tab>Ganges River Dolphin</px-tab>
           </px-tab-set>
-          <px-tab-pages id="demo-tab-pages" selected={{selected}}>
+          <px-tab-pages id="demo-tab-pages" selected="{{selected}}">
             <div class="tab-page">
               <p>PX Tab Page One</p>
               <p>Some interesting content goes here...</p>
@@ -87,6 +88,10 @@
         <br><br>
         <h4>This is a Polymer component that implements a set of custom tabs:</h4>
         <demo-custom-tabs></demo-custom-tabs>
+
+        <br><br>
+        <h4>This is a Polymer component that implements a set of custom tabs with the bare option</h4>
+        <demo-bare-tabs></demo-bare-tabs>
 
         <br><br>
         <h4>This demonstrates no tabs specified in the tab set (nothing will be rendered)</h4>

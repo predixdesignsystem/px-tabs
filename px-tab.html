@@ -35,7 +35,7 @@ They are typically used together like this:
 <dom-module id="px-tab">
     <link rel="import" type="css" href="css/px-tab.css"/>
     <template>
-      <div class="tab-title">
+      <div class$="{{_setTabTitleClass(bare)}}" id="tabtitle">
         <content></content>
       </div>
     </template>
@@ -44,14 +44,38 @@ They are typically used together like this:
 <script>
     Polymer({
 
-      is: 'px-tab',
+        is: 'px-tab',
 
-      /**
-       * Properties block, expose attribute values to the DOM via 'reflect'
-       *
-       * @property properties
-       * @type Object
-       */
-      properties: {}
+        /**
+         * Properties block, expose attribute values to the DOM via 'reflect'
+         *
+         * @property properties
+         * @type Object
+         */
+        properties: {
+
+            /**
+           * Use the bare attribute underlined styles in the tabs (instead of the default squared tabs)
+           *
+           *      <px-tab bare></px-tab>
+           *
+           * @default false
+           */
+          bare: {
+            type: Boolean,
+            value: false
+          },
+
+        },
+
+        _setTabTitleClass: function(setBare) {
+
+          if(setBare){
+              return "tab-title-bare";
+          }
+          return "tab-title";
+          
+        },
+
     });
 </script>

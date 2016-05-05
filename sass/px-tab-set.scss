@@ -1,5 +1,6 @@
 $inuit-tab-set-namespace                : $inuit-namespace !default;
 $inuit-tab-title-border-color--selected : $gray6 !default;
+$inuit-tab-title-bare-border-color : $gray4 !default;
 
 .#{$inuit-tab-set-namespace}tabs-container,
 %#{$inuit-tab-set-namespace}tabs-container {
@@ -14,4 +15,9 @@ $inuit-tab-title-border-color--selected : $gray6 !default;
   padding-left: 10px;
   padding-right: 10px;
   border-bottom: 1px solid $inuit-tab-title-border-color--selected;
+
+  &--bare {
+  	padding: 0px;
+  	border-bottom: 1px solid $inuit-tab-title-bare-border-color;
+  }
 }
