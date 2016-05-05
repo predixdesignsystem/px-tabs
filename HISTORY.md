@@ -1,3 +1,7 @@
+v0.3.2
+=================
+* pull request for bare tabs feature
+
 v0.3.1
 =================
 * added auto github pages functionality
