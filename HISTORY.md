@@ -1,3 +1,7 @@
+v0.3.3
+=================
+* added pull request test to travis
+
 v0.3.2
 =================
 * pull request for bare tabs feature
