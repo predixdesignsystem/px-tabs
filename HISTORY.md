@@ -1,3 +1,7 @@
+v0.3.4
+=================
+* updated tests and made them more streamlined (PR)
+
 v0.3.3
 =================
 * added pull request test to travis
