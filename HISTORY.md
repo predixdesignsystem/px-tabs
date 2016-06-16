@@ -1,3 +1,7 @@
+v0.4.1
+=================
+* Bump px-theme version
+
 v0.4.0
 =================
 * Upgrade to Polymer 1.5.0
