@@ -1,4 +1,4 @@
-#Px-Tabs
+#Px-Tabs [![Build Status](https://travis-ci.org/PredixDev/px-tabs.svg?branch=master)](https://travis-ci.org/PredixDev/px-tabs)
 
 ## Overview
 
