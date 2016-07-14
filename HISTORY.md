@@ -1,3 +1,7 @@
+v0.4.2
+=================
+* updated README.md to import the correct file
+
 v0.4.1
 =================
 * Bump px-theme version

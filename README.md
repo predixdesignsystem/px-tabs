@@ -25,7 +25,7 @@ bower install px-tabs --save
 Second, import the component to your application with the following tag in your head.
 
 ```
-<link rel="import" href="/bower_components/px-tabs/px-tabs.html"/>
+<link rel="import" href="/bower_components/px-tabs/px-tab-set.html"/>
 ```
 
 Finally, use the component in your application:
