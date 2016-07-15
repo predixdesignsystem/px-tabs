@@ -1,3 +1,7 @@
+v0.4.3
+=================
+* added no-bottom-border option
+
 v0.4.2
 =================
 * updated README.md to import the correct file

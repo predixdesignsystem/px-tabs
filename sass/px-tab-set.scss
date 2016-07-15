@@ -20,4 +20,8 @@ $inuit-tab-title-bare-border-color : $gray4 !default;
   	padding: 0px;
   	border-bottom: 1px solid $inuit-tab-title-bare-border-color;
   }
+  &--bare-no-border {
+  	padding: 0px;
+  	border-bottom: 0;
+  }
 }

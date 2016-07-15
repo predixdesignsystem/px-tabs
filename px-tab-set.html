@@ -40,7 +40,7 @@ Note: There is no limit on number of tabs in the set, but there is no scrolling 
     <link rel="import" type="css" href="css/px-tab-set.css"/>
     <template>
       <div class="tabs-container">
-        <div class$="{{_setTabSetClass(bare)}} flex">
+        <div class$="{{_setTabSetClass(bare, noBottomBorder)}} flex">
           <content id="tabdefs" select="*"></content>
         </div>
       </div>
@@ -75,6 +75,10 @@ Note: There is no limit on number of tabs in the set, but there is no scrolling 
           type: Boolean,
           value: false
         },
+        noBottomBorder: {
+          type: Boolean,
+          value: false
+        }
       },
 
       listeners: {
@@ -99,21 +103,23 @@ Note: There is no limit on number of tabs in the set, but there is no scrolling 
 
           if (this.bare){
              tabsDefined.forEach(function(tab){
-              Polymer.dom(tab).setAttribute('bare', true); 
+              Polymer.dom(tab).setAttribute('bare', true);
 
               });
           }
 
-         
+
       },
 
       _setTabSetClass: function() {
 
-          if(this.bare){
-              return "tabs-container__nav--bare";
-          }
-          
+        if(this.bare && this.noBottomBorder){
+          return "tabs-container__nav--bare-no-border";
+        } else if(this.bare){
+          return "tabs-container__nav--bare";
+        } else {
           return "tabs-container__nav";
+        }
       },
 
       /**
@@ -170,7 +176,7 @@ Note: There is no limit on number of tabs in the set, but there is no scrolling 
 
           var constructedClassMod =  constructedClass + '--selected';
           var cl = tab.$.tabtitle.classList;
-          
+
             if (selectedStyle && !cl.contains(constructedClassMod)) {
               cl.add(constructedClassMod);
             }
@@ -180,7 +186,7 @@ Note: There is no limit on number of tabs in the set, but there is no scrolling 
 
         }
       },
-      
+
       /**
        * this method sets the style on the old tab to false, and
        * the new tab to true,

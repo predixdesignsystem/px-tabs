@@ -4,10 +4,10 @@
 <link rel="import" href="px-tab.html"/>
 <link rel="import" href="px-tab-pages.html"/>
 
-<dom-module id="demo-bare-tabs">
+<dom-module id="demo-bare-tabs-no-border">
   <template>
     <section>
-      <px-tab-set bare id="tab-set-bare" selected="{{selected}}">
+      <px-tab-set bare id="tab-set-bare" selected="{{selected}}" no-bottom-border>
         <px-tab id="tab1-bare">Bengal Tiger</px-tab>
         <px-tab id="tab2-bare">Black Spider Monkey</px-tab>
         <px-tab id="tab3-bare">Sumatran Elephant</px-tab>
@@ -25,20 +25,14 @@
   </template>
   <script>
     Polymer({
-      is: 'demo-bare-tabs',
+      is: 'demo-bare-tabs-no-border',
       properties: {
         selected: {
           type: String,
           reflect: true
-        },
-        noBottomBorder: {
-          type:Boolean,
-          value: false
         }
       },
       ready: function() {
-        console.log('ready. ' + this.selected);
-        var tabs = document.querySelector('#tab-set-bare');
         this.selected = 0;
       }
     });

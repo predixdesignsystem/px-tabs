@@ -606,6 +606,9 @@ a {
   .tabs-container__nav--bare {
     padding: 0px;
     border-bottom: 1px solid #d1d0d8; }
+  .tabs-container__nav--bare-no-border {
+    padding: 0px;
+    border-bottom: 0; }
 
 /*------------------------------------*    #CLEARFIX
 \*------------------------------------*/
