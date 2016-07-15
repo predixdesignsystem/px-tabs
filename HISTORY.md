@@ -1,3 +1,7 @@
+v0.4.4
+=================
+* removed default 5px padding on top of px-tabs-pages
+
 v0.4.3
 =================
 * added no-bottom-border option

@@ -581,8 +581,7 @@ a {
   min-height: 100vh; }
 
 :host {
-  border-top-width: 0;
-  padding-top: 5px; }
+  border-top-width: 0; }
 
 /*------------------------------------*    #CLEARFIX
 \*------------------------------------*/
