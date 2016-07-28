@@ -1,5 +1,9 @@
 v0.4.5
 =================
+* added image to readme.
+
+v0.4.5
+=================
 * added vulcanize to demo gh-pages
 
 v0.4.4
