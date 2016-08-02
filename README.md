@@ -1,6 +1,6 @@
 #Px-Tabs [![Build Status](https://travis-ci.org/PredixDev/px-tabs.svg?branch=master)](https://travis-ci.org/PredixDev/px-tabs)
 
-[![px-tabs demo](px-tab-set.png?raw=true)](https://github.com/PredixDev/px-tabs)
+[![px-tabs demo](px-tab-set.png?raw=true)](https://predixdev.github.io/px-tabs/)
 
 ## Overview
 
@@ -37,6 +37,11 @@ Finally, use the component in your application:
         <px-tab>Tab 2</px-tab>
         <px-tab>Tab 3</px-tab>
     </px-tab-set>
+    <px-tab-pages selected="{{selected}}">
+        <section>Tab 1 content</section>
+        <section>Tab 2 content</section>
+        <section>Tab 3 content</section>
+    </px-tab-pages>
 ```
 ## documentation
 
@@ -78,4 +83,4 @@ $ grunt devmode
 
 * This px-tabs components currently don't support in-component scrolling when there are too many tabs.
 
-Please use [Github Issues](https://github.com/PredixDev/px-dropdown/issues) to submit any bugs you might find.
+Please use [Github Issues](https://github.com/PredixDev/px-tabs/issues) to submit any bugs you might find.

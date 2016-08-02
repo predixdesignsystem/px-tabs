@@ -25,8 +25,7 @@
       is: 'demo-bare-tabs',
       properties: {
         selected: {
-          type: String,
-          reflect: true
+          type: String
         },
         noBottomBorder: {
           type:Boolean,
@@ -34,7 +33,6 @@
         }
       },
       ready: function() {
-        var tabs = document.querySelector('#tab-set-bare');
         this.selected = 0;
       }
     });
