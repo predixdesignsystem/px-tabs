@@ -38,6 +38,12 @@ module.exports = function (grunt) {
               'css/noprefix/px-tab-pages-sketch.css': 'sass/px-tab-pages-sketch.scss',
               'css/noprefix/px-tab-pages.css':        'sass/px-tab-pages-predix.scss'
             }
+          },
+          demo: {
+            files:{
+                'css/noprefix/px-tabs-demo.css': 'sass/px-tabs-demo.scss'
+            }
+
           }
         },
 
