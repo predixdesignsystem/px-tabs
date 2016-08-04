@@ -107,10 +107,8 @@ $inuit-enable-list-inline--delimited : true;
   width: 80%;
 }
 .tabContainer {
-  flex:0 0 100%;
-  height:calculateRem(60px);
-  margin-top:calculateRem(35px);
-  background: $gray1;
+  height: auto;
+  background: $gray1; 
 }
 
 .footer{

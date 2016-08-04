@@ -54,55 +54,50 @@
         <template is="dom-repeat" items="{{optionsArray}}">
           <section class="tab-page flex flex--right flex--wrap">
             <div class="mega-demo flex u-pb++">
-            <!-- Properties -->
-            <div class="properties u-ph+ u-pb+  u-m++">
-              <p class="epsilon">Properties</p>
 
-            </div>
+              <div class="demoContainer u-mh++">
+                <!-- demo -->
+                <div class="flex flex--col">
+                  <div class="flex__item demo u-ph+ u-pb+ u-mt++">
+                    <br />
+                    <div style="position:relative;">
 
-            <div class="demoContainer u-mr++">
-              <!-- demo -->
-              <div class="flex flex--col">
-                <div class="flex__item demo u-ph+ u-pb+ u-mt++">
-                  <br />
-                  <div style="position:relative;">
+                      <template is="dom-if" if="{{_isFirstTab(index)}}">
+                        <h4>This is a Polymer component that implements a set of custom tabs:</h4>
+                        <demo-custom-tabs></demo-custom-tabs>
+                      </template>
 
-                    <template is="dom-if" if="{{_isFirstTab(index)}}">
-                      <h4>This is a Polymer component that implements a set of custom tabs:</h4>
-                      <demo-custom-tabs></demo-custom-tabs>
-                    </template>
+                      <template is="dom-if" if="{{_isSecondTab(index)}}">
+                        <h4>This is a Polymer component that implements a set of custom tabs with the bare option</h4>
+                        <demo-bare-tabs></demo-bare-tabs>
+                      </template>
 
-                    <template is="dom-if" if="{{_isSecondTab(index)}}">
-                      <h4>This is a Polymer component that implements a set of custom tabs with the bare option</h4>
-                      <demo-bare-tabs></demo-bare-tabs>
-                    </template>
-
-                    <template is="dom-if" if="{{_isThirdTab(index)}}">
-                      <h4>This is a Polymer component that implements a set of custom tabs with the bare option, and no bottom border</h4>
-                      <demo-bare-tabs-no-border></demo-bare-tabs-no-border>
-                    </template>
+                      <template is="dom-if" if="{{_isThirdTab(index)}}">
+                        <h4>This is a Polymer component that implements a set of custom tabs with the bare option, and no bottom border</h4>
+                        <demo-bare-tabs-no-border></demo-bare-tabs-no-border>
+                      </template>
+                    </div>
+                  </div>
+                  <div class="flex__item">
+                    <px-demo-snippet
+                      element-properties={{item}}
+                      element-name="px-tabs">
+                    </px-demo-snippet>
                   </div>
                 </div>
-                <div class="flex__item">
-                  <px-demo-snippet
-                    element-properties={{item}}
-                    element-name="px-tabs">
-                  </px-demo-snippet>
+              </div>
+            </div>
+            <div class="apiContainer">
+              <div class="flex flex--col api u-mt++" >
+                <div>
+                  <px-api-viewer source="px-tab-set"></px-api-viewer>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="apiContainer">
-            <div class="flex flex--col api u-mt++" >
-              <div>
-                <px-api-viewer source="px-tab-set"></px-api-viewer>
-              </div>
-            </div>
-          </div>
-        </section>
-      </template>
-    </px-tab-pages>
-  </div>
+          </section>
+        </template>
+      </px-tab-pages>
+    </div>
   <footer class="footer flex flex--center">
     <div class="footer__container u-pv++">
       <div>

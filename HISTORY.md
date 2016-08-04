@@ -1,3 +1,7 @@
+v0.4.8
+=================
+* removed properties, edited styles
+
 v0.4.7
 =================
 * added mega demo
