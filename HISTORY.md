@@ -1,3 +1,7 @@
+v0.4.9
+=================
+* updated mega demo styles and bower px-demo-snippet to ^
+
 v0.4.8
 =================
 * removed properties, edited styles

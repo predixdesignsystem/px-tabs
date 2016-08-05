@@ -29,10 +29,11 @@
     <div class="hero u-p++ text--shadow">
       <a class="actionable flex flex--right flex--middle" href="https://github.com/PredixDev/px-tabs" target="_blank"><iron-icon class="menu__open" icon="fa:fa-github"></iron-icon>View on Github</a>
   		<h1 class="delta">px-tabs</h1>
-  		<p>
-        A classic design for organizing content on multiple tabs.
-  		</p>
-      <br />
+      <div class="description-text">
+    		<p>
+          A classic design for organizing content on multiple tabs.
+    		</p>
+      </div>
   		<div class="flex">
   			<img class="u-mr--" src="https://img.shields.io/travis/PredixDev/px-tabs.svg?style=flat-square" alt="Travis"/>
   			<img class="u-mr--" src="https://img.shields.io/bower/v/px-tabs.svg?style=flat-square" alt="Bower"/>
@@ -46,20 +47,20 @@
       <div class="tabContainer u-pt++ u-pl++">
         <px-tab-set selected="{{selected}}" bare no-bottom-border>
           <template is="dom-repeat" items="{{optionsArray}}">
-            <px-tab>Configuration {{indexPlusOne(index)}}</px-tab>
+            <px-tab>Option {{indexPlusOne(index)}}</px-tab>
           </template>
         </px-tab-set>
       </div>
       <px-tab-pages selected="{{selected}}">
         <template is="dom-repeat" items="{{optionsArray}}">
-          <section class="tab-page flex flex--right flex--wrap">
-            <div class="mega-demo flex u-pb++">
+          <section class="tab-page">
+            <div class="mega-demo flex flex--wrap u-ph++ u-pb++">
 
-              <div class="demoContainer u-mh++">
+              <div class="demoContainer u-mt+">
                 <!-- demo -->
                 <div class="flex flex--col">
-                  <div class="flex__item demo u-ph+ u-pb+ u-mt++">
-                    <br />
+                  <div class="flex__item demo u-p+">
+                    
                     <div style="position:relative;">
 
                       <template is="dom-if" if="{{_isFirstTab(index)}}">
