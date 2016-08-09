@@ -81,6 +81,9 @@ Note: There is no limit on number of tabs in the set, but there is no scrolling 
         noBottomBorder: {
           type: Boolean,
           value: false
+        },
+        _previousTab: {
+          type: Object
         }
       },
 
@@ -91,12 +94,8 @@ Note: There is no limit on number of tabs in the set, but there is no scrolling 
       },
 
       ready: function() {
-
         var boundHandler = this._setBareProperty.bind(this);
         this._observer = Polymer.dom(this.$.tabdefs).observeNodes(boundHandler);
-
-
-
       },
 
       _setBareProperty: function(tabSet){
@@ -104,14 +103,11 @@ Note: There is no limit on number of tabs in the set, but there is no scrolling 
           return (node.nodeType === Node.ELEMENT_NODE && node.nodeName === 'PX-TAB');
         });
 
-          if (this.bare){
-             tabsDefined.forEach(function(tab){
-              Polymer.dom(tab).setAttribute('bare', true);
-
-              });
-          }
-
-
+        if (this.bare){
+          tabsDefined.forEach(function(tab){
+            Polymer.dom(tab).setAttribute('bare', true);
+          });
+        }
       },
 
       _setTabSetClass: function() {
@@ -145,7 +141,7 @@ Note: There is no limit on number of tabs in the set, but there is no scrolling 
        */
       _onIronSelect: function(event) {
         this._tabChanged(event.detail.item, this._previousTab);
-        this._previousTab = event.detail.item;
+        this.set('_previousTab',event.detail.item);
         this.cancelDebouncer('tab-changed');
       },
       /**
@@ -180,13 +176,12 @@ Note: There is no limit on number of tabs in the set, but there is no scrolling 
           var constructedClassMod =  constructedClass + '--selected';
           var cl = tab.$.tabtitle.classList;
 
-            if (selectedStyle && !cl.contains(constructedClassMod)) {
-              cl.add(constructedClassMod);
-            }
-            else if (!selectedStyle && cl.contains(constructedClassMod)) {
-              cl.remove(constructedClassMod);
-            }
-
+          if (selectedStyle && !cl.contains(constructedClassMod)) {
+            cl.add(constructedClassMod);
+          }
+          else if (!selectedStyle && cl.contains(constructedClassMod)) {
+            cl.remove(constructedClassMod);
+          }
         }
       },
 

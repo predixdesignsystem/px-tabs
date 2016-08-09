@@ -35,7 +35,7 @@ They are typically used together like this:
 <dom-module id="px-tab">
     <link rel="import" type="css" href="css/px-tab.css"/>
     <template>
-      <div class$="{{_setTabTitleClass(bare)}}" id="tabtitle">
+      <div id="tabtitle">
         <content></content>
       </div>
     </template>
@@ -44,38 +44,55 @@ They are typically used together like this:
 <script>
     Polymer({
 
-        is: 'px-tab',
+      is: 'px-tab',
 
-        /**
-         * Properties block, expose attribute values to the DOM via 'reflect'
+      /**
+       * Properties block, expose attribute values to the DOM via 'reflect'
+       *
+       * @property properties
+       * @type Object
+       */
+      properties: {
+
+          /**
+         * Use the bare attribute underlined styles in the tabs (instead of the default squared tabs)
          *
-         * @property properties
-         * @type Object
+         *      <px-tab bare></px-tab>
+         *
+         * @default false
          */
-        properties: {
-
-            /**
-           * Use the bare attribute underlined styles in the tabs (instead of the default squared tabs)
-           *
-           *      <px-tab bare></px-tab>
-           *
-           * @default false
-           */
-          bare: {
-            type: Boolean,
-            value: false
-          },
-
+        bare: {
+          type: Boolean,
+          value: false,
+          observer: '_setClasses'
         },
 
-        _setTabTitleClass: function(setBare) {
-
-          if(setBare){
-              return "tab-title-bare";
+      },
+      attached: function() {
+        this._setClasses();
+      },
+      /**
+       * This function sets the classes on title, keeping the existing selected class in there, if it exists.
+       * @method _setClasses
+       */
+      _setClasses: function() {
+        var tabtitle = this.$.tabtitle,
+            cl = tabtitle.classList;
+        if (this.bare){
+          if (!cl.contains("tab-title-bare")) {
+            cl.add("tab-title-bare");
           }
-          return "tab-title";
-          
-        },
-
+          if (cl.contains("tab-title")) {
+            cl.remove("tab-title");
+          }
+        } else {
+          if (!cl.contains("tab-title")) {
+            cl.add("tab-title");
+          }
+          if (cl.contains("tab-title-bare")) {
+            cl.remove("tab-title-bare");
+          }
+        }
+      }
     });
 </script>

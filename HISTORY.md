@@ -1,3 +1,7 @@
+v0.4.8
+=================
+* fixed racing condition that cancelled the selected tab.
+
 v0.4.7
 =================
 * added mega demo
