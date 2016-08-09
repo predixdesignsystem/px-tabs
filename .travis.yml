@@ -7,14 +7,14 @@ branches:
   except:
   - gh-pages
 addons:
-  firefox: "46.0"
+  firefox: latest-esr
   apt:
     sources:
-    - google-chrome
+      - google-chrome
     packages:
-    - google-chrome-stable
+      - google-chrome-stable
 before_script:
-- npm install web-component-tester
+  - npm install web-component-tester@4.2.2
 - npm install bower
 - export PATH=$PWD/node_modules/.bin:$PATH
 - bower install
