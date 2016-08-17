@@ -1,3 +1,7 @@
+v0.4.12
+=================
+* added overflow to demoContainer and removed flex__wrap from mega-demo
+
 v0.4.11
 =================
 * fixed racing condition that cancelled the selected tab.
