@@ -39,9 +39,12 @@ Note: There is no limit on number of tabs in the set, but there is no scrolling 
 @demo index.html
 -->
 
+<link rel="import" href="css/px-tab-set-styles.html">
+
 <dom-module id="px-tab-set">
-    <link rel="import" type="css" href="css/px-tab-set.css"/>
     <template>
+      <style include="px-tab-set-styles"></style>
+      <style include="px-theme-styles"></style>
       <div class="tabs-container">
         <div class$="{{_setTabSetClass(bare, noBottomBorder)}} flex">
           <content id="tabdefs" select="*"></content>

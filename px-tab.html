@@ -32,9 +32,14 @@ They are typically used together like this:
 @homepage index.html
 @demo index.html
 -->
+
+<link rel="import" href="css/px-tab-styles.html">
+
 <dom-module id="px-tab">
-    <link rel="import" type="css" href="css/px-tab.css"/>
     <template>
+      <style include="px-tab-styles"></style>
+      <style include="px-theme-styles"></style>
+
       <div id="tabtitle">
         <content></content>
       </div>

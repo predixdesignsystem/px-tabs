@@ -35,18 +35,20 @@ They are typically used together like this:
 @homepage index.html
 @demo index.html
 -->
+<link rel="import" href="css/px-tab-pages-styles.html">
 <dom-module id="px-tab-pages">
-  <link rel="import" type="css" href="css/px-tab-pages.css"/>
-  <style>
+  <template>
+    <style>
     :host {
       display: block;
     }
     :host > ::content > :not(.iron-selected) {
       display: none !important;
     }
-  </style>
-  <template>
-      <content></content>
+    </style>
+    <style include="px-tab-pages-styles"></style>
+    <style include="px-theme-styles"></style>
+    <content></content>
   </template>
 </dom-module>
 
