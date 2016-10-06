@@ -29,7 +29,7 @@
       "iron-demo-helpers": "PolymerElements/iron-demo-helpers#~1.2.3",
       "px-polymer-font-awesome":"^0.1.8",
       "px-api-viewer": "~0.1.0",
-      "px-demo-snippet": "^0.5.1",
+      "px-demo-snippet": "^0.6.3",
       "px-actionable-text-icons-design": "^0.0.3",
       "px-code-design": "^0.2.11",
       "px-headings-design": "^0.2.14",
