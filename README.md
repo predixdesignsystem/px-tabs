@@ -43,7 +43,7 @@ Finally, use the component in your application:
         <section>Tab 3 content</section>
     </px-tab-pages>
 ```
-## documentation
+## Documentation
 
 Read the full API and view the demo [here](https://predixdev.github.io/px-tabs).
 
