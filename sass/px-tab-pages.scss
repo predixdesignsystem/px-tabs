@@ -1,5 +1,5 @@
 $inuit-tab-pages-namespace    : $inuit-namespace !default;
-$inuit-tab-pages-border-color : $gray6 !default;
+$inuit-tab-pages-border-color : var(--px-tab-border-color, $gray6) !default;
 
 .#{$inuit-tab-pages-namespace}tab-page,
 %#{$inuit-tab-pages-namespace}tab-page {

@@ -1,11 +1,11 @@
 $inuit-tab-namespace                    : $inuit-namespace !default;
 
-$inuit-tab-title-background             : $gray3 !default;
-$inuit-tab-title-background--selected   : $white !default;
-$inuit-tab-title-color                  : $black !default;
-$inuit-tab-title-color--selected        : $select-blue-default !default;
-$inuit-tab-title-border-color--selected : $gray6 !default;
-$inuit-tab-title-color-bare             : $gray8 !default;
+$inuit-tab-title-background             : var(--px-tab-background-color, $gray3) !default;
+$inuit-tab-title-background--selected   : var(--px-tab-background-color--selected, $white) !default;
+$inuit-tab-title-color                  : var(--px-tab-text-color, $black) !default;
+$inuit-tab-title-color--selected        : var(--px-tab-text-color--selected, $select-blue-default) !default;
+$inuit-tab-title-border-color--selected : var(--px-tab-border-color, $gray6) !default;
+$inuit-tab-title-color-bare             : var(--px-tab-text-color--bare, $gray8) !default;
 
 :host {
   @extend %flex;
@@ -56,14 +56,12 @@ div.#{$inuit-tab-namespace}tab-title--selected,
       cursor: pointer;
     }
 
-    &--selected, 
+    &--selected,
     &--selected:hover {
       color: $inuit-tab-title-color--selected;
       border-bottom: 1px solid $inuit-tab-title-color--selected;
       cursor: pointer;
     }
 
-  
+
 }
-
-
