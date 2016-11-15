@@ -1,6 +1,6 @@
 {
     "name": "px-tabs",
-    "version": "0.5.4",
+    "version": "0.5.5",
     "main": [
         "px-tabs.html"
     ],
@@ -20,22 +20,22 @@
     "dependencies": {
         "polymer": "^1.6.0",
         "px-theme": "~1.1.2",
-      	"iron-pages" : "PolymerElements/iron-pages"
+        "iron-pages": "PolymerElements/iron-pages"
     },
     "devDependencies": {
-      "px-starter-kit-design": "~0.6.0",
-      "px-forms-design": "#~0.3.15",
-      "px-tables-design": "#~0.3.12",
-      "iron-demo-helpers": "PolymerElements/iron-demo-helpers#~1.2.3",
-      "px-polymer-font-awesome":"^0.1.8",
-      "px-api-viewer": "~0.1.0",
-      "px-demo-snippet": "^0.6.3",
-      "px-actionable-text-icons-design": "^0.1.0",
-      "px-code-design": "^0.2.11",
-      "px-headings-design": "^0.2.14",
-      "px-list-inline-design": "^0.2.11",
-      "px-dropdown": "^0.12.0",
-      "px-spacing-design": "~0.3.8",
-      "px-toggle-design": "^0.2.12"
+        "px-starter-kit-design": "~0.6.0",
+        "px-forms-design": "#~0.3.15",
+        "px-tables-design": "#~0.3.12",
+        "iron-demo-helpers": "PolymerElements/iron-demo-helpers#~1.2.3",
+        "px-polymer-font-awesome": "^0.1.8",
+        "px-api-viewer": "~0.1.0",
+        "px-demo-snippet": "^0.6.9",
+        "px-actionable-text-icons-design": "^0.1.0",
+        "px-code-design": "^0.2.11",
+        "px-headings-design": "^0.2.14",
+        "px-list-inline-design": "^0.2.11",
+        "px-dropdown": "^0.12.0",
+        "px-spacing-design": "~0.3.8",
+        "px-toggle-design": "^0.2.12"
     }
 }
