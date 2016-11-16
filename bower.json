@@ -1,13 +1,13 @@
 {
     "name": "px-tabs",
-    "version": "0.5.5",
+    "version": "0.5.6",
     "main": [
         "px-tabs.html"
     ],
     "ignore": [
         ".*",
         "npm-debug.log",
-        "Gruntfile.js",
+        "gulpfile.js",
         "sass",
         "bower_components",
         "node_modules",
