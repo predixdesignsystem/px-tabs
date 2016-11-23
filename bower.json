@@ -1,6 +1,6 @@
 {
     "name": "px-tabs",
-    "version": "0.5.8",
+    "version": "0.5.9",
     "main": [
         "px-tabs.html"
     ],
@@ -19,7 +19,7 @@
     ],
     "dependencies": {
         "polymer": "^1.6.0",
-        "px-theme": "~1.1.2",
+        "px-theme": "^2.0.1",
         "iron-pages": "PolymerElements/iron-pages"
     },
     "devDependencies": {
