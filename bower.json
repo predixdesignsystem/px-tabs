@@ -1,8 +1,8 @@
 {
     "name": "px-tabs",
-    "version": "0.5.15",
+    "version": "0.5.16",
     "main": [
-        "px-tabs.html"
+        "px-tab-set.html"
     ],
     "ignore": [
         ".*",
