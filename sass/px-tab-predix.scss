@@ -59,6 +59,7 @@ div.#{$inuit-tab-namespace}tab-title--selected,
   background-color: $inuit-tab-title-background--selected;
   color: $inuit-tab-title-color--selected;
   border: 1px solid $inuit-tab-title-border-color--selected;
+  font-weight: bold;
   margin-bottom: -1px;
   padding-bottom: 1px;
   border-bottom-width: 0;
@@ -85,7 +86,8 @@ div.#{$inuit-tab-namespace}tab-title--selected,
     &--selected,
     &--selected:hover {
       color: $inuit-tab-title-color--selected;
-      border-bottom: 1px solid $inuit-tab-title-color--selected;
+      border-bottom: 2px solid $inuit-tab-title-color--selected;
+      font-weight: bold;
       cursor: pointer;
     }
 

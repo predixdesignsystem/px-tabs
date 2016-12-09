@@ -1,3 +1,9 @@
+v0.5.14
+==================
+* updated styles to match spec per PR #7
+* fixed demo
+* temporarily removed sauce test for M$ Edge b/c it keeps timing out in Travis
+
 v0.5.13
 ==================
 * fixed test fixture and tests to match other Px components
