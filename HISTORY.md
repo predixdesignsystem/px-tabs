@@ -1,3 +1,7 @@
+v0.5.15
+==================
+* fixed demo
+
 v0.5.14
 ==================
 * updated styles to match spec per PR #7
