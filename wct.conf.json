@@ -26,17 +26,13 @@
         },
         {
           "browserName": "safari",
-          "platform": "OS X 10.10",
-          "version": "8"
-        },
-        {
-          "browserName": "firefox",
-          "platform": "OS X 10.11"
+          "platform": "OS X 10.11",
+          "version": "10"
         }
       ]
     }
   },
   "suites": [
-    "test/wct-tests.html"
+    "test/fixture.html"
   ]
 }

@@ -1,3 +1,7 @@
+v0.5.13
+==================
+* fixed test fixture and tests to match other Px components
+
 v0.5.12
 ==================
 * fixed theming
