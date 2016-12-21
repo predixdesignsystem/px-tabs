@@ -1,3 +1,7 @@
+v0.6.1
+==================
+* themed demo page
+
 v0.6.0
 ==================
 * Updated dependencies

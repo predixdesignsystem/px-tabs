@@ -53,7 +53,7 @@ $inuit-enable-list-inline--delimited : true;
 
 // Component
 .mega-demo{
-  background: $gray1;
+  background: var(--px-demo-interactive-background-color, $gray1);
   width: 100%;
 }
 
@@ -63,8 +63,8 @@ $inuit-enable-list-inline--delimited : true;
 
 .properties{
   flex: 0 0 calculateRem(250px);
-  background: $white;
-  border: 1px solid $gray4;
+  background: var(--px-demo-properties-background-color, $white);
+  border: 1px solid var(--px-demo-properties-border-color, $gray4);
   overflow-x: hidden;
   overflow-y: auto;
   margin-right: calculateRem(20px);
@@ -79,7 +79,7 @@ $inuit-enable-list-inline--delimited : true;
   flex-basis: calculateRem(150px);
 }
 .componentHeader {
-  border-bottom: 1px solid $gray4;
+  border: 1px solid var(--px-demo-properties-border-color, $gray4);
   font-size: calculateRem(25px);
 }
 .childrenAssociated {
@@ -89,8 +89,8 @@ $inuit-enable-list-inline--delimited : true;
 }
 .demo{
   flex-basis: calculateRem(400px);
-  background: $white;
-  border: 1px solid $gray4;
+  background: var(--px-demo-component-background-color, $white);
+  border: 1px solid var(--px-demo-properties-border-color, $gray4);
   overflow: auto;
 }
 .componentList {
@@ -111,19 +111,19 @@ $inuit-enable-list-inline--delimited : true;
 }
 .apiContainer {
   margin: 0 auto;
-  background-color: $white;
+  background-color: var(--px-demo-api-background-color, $white);
 }
 .tabContainer {
   height:auto;
-  background: $gray1;
+  background: var(--px-demo-interactive-background-color, $gray1);
 }
 
 .footer{
-  background-color: $gray7;
+  background-color: var(--px-footer-background-color, $gray7);
 }
 .footer__container{
   flex-basis: 90%;
-  color: $gray4;
+  color:  var(--px-footer-text-color, $gray4);
   font-size: 12px;
   align-items: center;
   display: inline-flex;
@@ -136,13 +136,13 @@ $inuit-enable-list-inline--delimited : true;
   &:visited,
   &:active,
   &:focus {
-    color: $gray4;
+    color: var(--px-footer-text-color,$gray4);
   }
   &:hover{
-    color: $gray2;
+    color: var(--px-footer-text-color--hover,$gray2);
   }
   &:active {
-    color: $grey4;
+    color: var(--px-footer-text-color--pressed,$grey4);
   }
 }
 .footer__img{
