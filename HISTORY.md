@@ -1,3 +1,7 @@
+v0.6.2
+==================
+* changing ghp.sh to account for Alpha releases
+
 v0.6.1
 ==================
 * themed demo page
