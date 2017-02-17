@@ -22,6 +22,8 @@ common/abstract rules go in px-tabs-sketch.scss, not in this file.
 @import "px-defaults-design/_settings.defaults.scss";
 @import "px-colors-design/_settings.colors.scss";
 
+@import "px-tab-set-sketch.scss";
+
 $inuit-tab-set-namespace                : $inuit-namespace !default;
 $inuit-tab-title-border-color           : var(--px-tab-border-color, $gray6) !default;
 $inuit-tab-title-bare-border-color      : var(--px-tab-border-color--bare, $gray4) !default;

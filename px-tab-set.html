@@ -11,16 +11,12 @@
 <link rel="import" href="../iron-selector/iron-selectable.html"/>
 
 <!--
-The px-tab-set and px-tab components together provide the tabbed interface.
+The px-tab-set and px-tab components together provide the tabbed interface. The tabbed content is expected to be contained in a separate px-tab-pages component.
 
-The tabbed content is expected to be contained in a separate px-tab-pages component.
-
-In this example, each < section > corresponds to a px-tab in the px-tab-set list.
-
-Note: There is no limit on number of tabs in the set, but there is no scrolling support.
+Note: There is no limit on the number of tabs in a set, but there is no support for scrolling or wrapping.
 
 
-## Usage
+#### Usage
 ```
     <px-tab-set selected="{{selected}}">
         <px-tab>Tab 1</px-tab>
@@ -34,7 +30,7 @@ Note: There is no limit on number of tabs in the set, but there is no scrolling 
     </px-tab-pages>
 ```
 
-### Styling
+#### Styling
 The following custom properties are available for styling:
 
 Custom property | Description | Default
@@ -58,7 +54,7 @@ Custom property | Description | Default
 <dom-module id="px-tab-set">
     <template>
       <style include="px-tab-set-styles"></style>
-      
+
       <div class="tabs-container">
         <div class$="{{_setTabSetClass(bare, noBottomBorder)}} flex">
           <content id="tabdefs" select="*"></content>
