@@ -1,6 +1,6 @@
 {
   "name": "px-tabs",
-  "version": "0.6.5",
+  "version": "0.7.0",
   "main": [
     "px-tab-set.html"
   ],
@@ -22,7 +22,8 @@
   "dependencies": {
     "polymer": "^1.6.0",
     "px-theme": "^2.0.1",
-    "iron-pages": "PolymerElements/iron-pages"
+    "iron-pages": "PolymerElements/iron-pages",
+    "iron-a11y-keys": "^1.0.7"
   },
   "devDependencies": {
     "px-starter-kit-design": "^0.7.0",

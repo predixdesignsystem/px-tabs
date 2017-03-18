@@ -9,6 +9,7 @@
 <link rel="import" href="px-tab.html"/>
 <link rel="import" href="px-tab-pages.html"/>
 <link rel="import" href="../iron-selector/iron-selectable.html"/>
+<link rel="import" href="../iron-a11y-keys/iron-a11y-keys.html"/>
 
 <!--
 The px-tab-set and px-tab components together provide the tabbed interface. The tabbed content is expected to be contained in a separate px-tab-pages component.
@@ -42,6 +43,7 @@ Custom property | Description | Default
 `--px-tab-text-color--bare` | Text color for unselected 'bare' tabs | `$gray8`
 `--px-tab-border-color` | Border color for unselected tabs | `$gray6`
 `--px-tab-border-color--bare` | Border color for 'bare' tabs |  `$gray4`
+`--px-tab-outline-style` | Outline style when tabs have focus |  `none`
 
 @element px-tab-set
 @blurb Container for px-tab elements
@@ -55,11 +57,14 @@ Custom property | Description | Default
     <template>
       <style include="px-tab-set-styles"></style>
 
-      <div class="tabs-container">
+      <div id="container" class="tabs-container" tabindex="0">
         <div class$="{{_setTabSetClass(bare, noBottomBorder)}} flex">
           <content id="tabdefs" select="*"></content>
         </div>
       </div>
+
+      <iron-a11y-keys target="[[_target]]" keys="right up" on-keys-pressed="_increment"></iron-a11y-keys>
+      <iron-a11y-keys target="[[_target]]" keys="left down" on-keys-pressed="_decrement"></iron-a11y-keys>
     </template>
 </dom-module>
 
@@ -76,7 +81,8 @@ Custom property | Description | Default
        */
       properties: {
         selected: {
-          type: String,
+          type: Number,
+          value: 0,
           notify: true
         },
 
@@ -95,8 +101,18 @@ Custom property | Description | Default
           type: Boolean,
           value: false
         },
+        _target: {
+          type: Object,
+          value: function() {
+            return this.$.container;
+          }
+        },
         _previousTab: {
           type: Object
+        },
+        _tabCount: {
+          type: Number,
+          value: 0
         }
       },
 
@@ -107,14 +123,51 @@ Custom property | Description | Default
       },
 
       ready: function() {
-        var boundHandler = this._setBareProperty.bind(this);
+        var boundHandler = this._getTabDefinitions.bind(this);
         this._observer = Polymer.dom(this.$.tabdefs).observeNodes(boundHandler);
       },
 
-      _setBareProperty: function(tabSet){
+      attached: function() {
+        this.setAttribute('role','tablist');
+      },
+
+      /**
+       * Move forward by one tab, with wraparound from last to first.
+       */
+      _increment: function(evt) {
+        evt.detail.keyboardEvent.preventDefault();
+        // if last tab is selected, wrap around
+        if(this.selected === this._tabCount - 1) {
+          this.selected = 0;
+        }
+        // else move forward one tab
+        else {
+          this.selected++;
+        }
+      },
+
+      /**
+       * Move backward by one tab, with wraparound from first to last.
+       */
+      _decrement: function(evt) {
+        evt.detail.keyboardEvent.preventDefault();
+        // if first tab is selected, wrap around
+        if(this.selected === 0 || this.selected === '0') {
+          this.selected = this._tabCount - 1;
+        }
+        // else move back one tab
+        else {
+          this.selected--;
+        }
+      },
+
+      _getTabDefinitions: function(tabSet){
+        // get px-tab nodes passed in as children of px-tab-set
         var tabsDefined = tabSet.addedNodes.filter(function(node) {
           return (node.nodeType === Node.ELEMENT_NODE && node.nodeName === 'PX-TAB');
         });
+        // count tabs for the keyboard a11y functions
+        this._tabCount = tabsDefined.length;
 
         if (this.bare){
           tabsDefined.forEach(function(tab){
@@ -191,9 +244,11 @@ Custom property | Description | Default
 
           if (selectedStyle && !cl.contains(constructedClassMod)) {
             cl.add(constructedClassMod);
+            tab.setAttribute('aria-selected','true');
           }
           else if (!selectedStyle && cl.contains(constructedClassMod)) {
             cl.remove(constructedClassMod);
+            tab.setAttribute('aria-selected','false');
           }
         }
       },

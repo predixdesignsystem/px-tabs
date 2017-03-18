@@ -1,3 +1,10 @@
+v0.7.0
+==================
+* improved accessibility
+* added iron-a11y-keys support
+* simplified sass
+* fixed unit tests
+
 v0.6.5
 ==================
 * updated to px-demo

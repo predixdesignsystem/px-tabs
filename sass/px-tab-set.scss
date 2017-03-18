@@ -9,18 +9,19 @@
  */
 
 //
-// Sass for the "sketch" notion of the px-tabs component
+// Sass for the Predix notion of the px-tabs component
 //
 // @author
 //
 
 /*
-THIS FILE SHOULD CONTAIN ONLY ABSTRACT/'SKETCH' THEME RULES, NOT SPECIFIC TO PREDIX BRANDING
-Predix branding rules go in px-tabs-predix.scss, not in this file.
+THIS FILE SHOULD CONTAIN ONLY RULES SPECIFIC TO PREDIX BRANDING
+common/abstract rules go in px-tabs-sketch.scss, not in this file.
 */
 
 // Settings
 @import "px-colors-design/_settings.colors.scss";
+@import "px-defaults-design/_settings.defaults.scss";
 
 // Generic
 @import "px-normalize-design/_generic.normalize.scss";
@@ -30,6 +31,35 @@ Predix branding rules go in px-tabs-predix.scss, not in this file.
 // Base
 @import "px-flexbox-design/_base.flexbox.scss";
 @import "px-viewport-design/_base.viewport.scss";
+
+// Component
+
+.tabs-container {
+  border: 0;
+  padding: 0;
+}
+
+.tabs-container:focus {
+  // TODO: we need a Predix-wide design for accessibile focus indicators
+  outline: var(--px-tab-outline-style, none);
+}
+
+.tabs-container__nav {
+  font: inherit;
+  margin: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-bottom: 1px solid var(--px-tab-border-color, $gray6);
+
+  &--bare {
+  	padding: 0px;
+  	border-bottom: 1px solid var(--px-tab-border-color--bare, $gray4);
+  }
+  &--bare-no-border {
+  	padding: 0px;
+  	border-bottom: 0;
+  }
+}
 
 // Trumps
 @import "inuit-clearfix/_trumps.clearfix.scss";

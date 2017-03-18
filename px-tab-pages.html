@@ -35,7 +35,6 @@ They are typically used together like this:
 @homepage index.html
 @demo index.html
 -->
-<link rel="import" href="css/px-tab-pages-styles.html">
 <dom-module id="px-tab-pages">
   <template>
     <style>
@@ -46,8 +45,7 @@ They are typically used together like this:
       display: none !important;
     }
     </style>
-    <style include="px-tab-pages-styles"></style>
-    
+
     <content></content>
   </template>
 </dom-module>
@@ -78,6 +76,10 @@ They are typically used together like this:
     observers: [
       '_selectedPageChanged(selected)'
     ],
+
+    attached: function() {
+      this.setAttribute('role','tabpanel');
+    },
 
     _selectedPageChanged: function(selected, old) {
       this.async(this.notifyResize);

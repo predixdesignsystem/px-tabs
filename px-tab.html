@@ -38,7 +38,7 @@ They are typically used together like this:
 <dom-module id="px-tab">
     <template>
       <style include="px-tab-styles"></style>
-      
+
 
       <div id="tabtitle">
         <content></content>
@@ -75,6 +75,7 @@ They are typically used together like this:
       },
       attached: function() {
         this._setClasses();
+        this.setAttribute('role','tab');
       },
       /**
        * This function sets the classes on title, keeping the existing selected class in there, if it exists.
