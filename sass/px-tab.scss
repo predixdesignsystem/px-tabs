@@ -56,7 +56,7 @@ common/abstract rules go in px-tabs-sketch.scss, not in this file.
 
 div.tab-title--selected {
   background-color: var(--px-tab-background-color--selected, $white);
-  color: var(--px-tab-text-color--selected, $select-blue-default);
+  color: var(--px-tab-text-color--selected, $select-default);
   border: 1px solid var(--px-tab-border-color--selected, $gray6);
   font-weight: bold;
   margin-bottom: -1px;
@@ -76,15 +76,15 @@ div.tab-title--selected {
   cursor: pointer;
 
    &:hover{
-      color: var(--px-tab-text-color--selected, $select-blue-default);
+      color: var(--px-tab-text-color--selected, $select-default);
       border-bottom: 1px solid transparent;
       cursor: pointer;
     }
 
     &--selected,
     &--selected:hover {
-      color: var(--px-tab-text-color--selected, $select-blue-default);
-      border-bottom: 2px solid var(--px-tab-text-color--selected, $select-blue-default);
+      color: var(--px-tab-text-color--selected, $select-default);
+      border-bottom: 2px solid var(--px-tab-text-color--selected, $select-default);
       font-weight: bold;
       cursor: pointer;
     }

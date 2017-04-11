@@ -1,3 +1,7 @@
+v1.0.0
+==================
+* Major bump picking up redesigned sub-dependencies
+
 v0.7.0
 ==================
 * improved accessibility
