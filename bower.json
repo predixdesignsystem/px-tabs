@@ -26,8 +26,8 @@
     "iron-a11y-keys": "^1.0.7"
   },
   "devDependencies": {
-    "px-starter-kit-design": "^1.0.1",
-    "px-code-design": "^2.0.1",
+    "px-starter-kit-design": "^1.0.0",
+    "px-code-design": "^2.0.0",
     "px-toggle-design": "^2.0.0",
     "px-demo": "^1.4.8"
   }
