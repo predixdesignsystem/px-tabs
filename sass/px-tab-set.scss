@@ -49,7 +49,7 @@ common/abstract rules go in px-tabs-sketch.scss, not in this file.
   margin: 0;
   padding-left: 10px;
   padding-right: 10px;
-  border-bottom: 1px solid var(--px-tab-border-color, $gray6);
+  border-bottom: 1px solid var(--px-tab-border-color, $gray8);
 
   &--bare {
   	padding: 0px;

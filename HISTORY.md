@@ -1,3 +1,7 @@
+v1.0.1
+==================
+* migrate grays for redesign
+
 v1.0.0
 ==================
 * Major bump picking up redesigned sub-dependencies
