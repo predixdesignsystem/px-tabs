@@ -58,7 +58,7 @@ Custom property | Description | Default
       <style include="px-tab-set-styles"></style>
 
       <div id="container" class="tabs-container" tabindex="0">
-        <div class$="{{_setTabSetClass(bare, noBottomBorder)}} flex">
+        <div class="tabs-container__nav flex">
           <content id="tabdefs" select="*"></content>
         </div>
       </div>
@@ -73,33 +73,11 @@ Custom property | Description | Default
 
       is: 'px-tab-set',
 
-      /**
-       * Properties block, expose attribute values to the DOM via 'reflect'
-       *
-       * @property properties
-       * @type String
-       */
       properties: {
         selected: {
           type: Number,
           value: 0,
           notify: true
-        },
-
-        /**
-         * Use the bare attribute underlined styles in the tabs (instead of the default squared tabs)
-         *
-         *      <px-tab-set bare></px-tab-set>
-         *
-         * @default false
-         */
-        bare: {
-          type: Boolean,
-          value: false
-        },
-        noBottomBorder: {
-          type: Boolean,
-          value: false
         },
         _target: {
           type: Object,
@@ -169,22 +147,6 @@ Custom property | Description | Default
         // count tabs for the keyboard a11y functions
         this._tabCount = tabsDefined.length;
 
-        if (this.bare){
-          tabsDefined.forEach(function(tab){
-            Polymer.dom(tab).setAttribute('bare', true);
-          });
-        }
-      },
-
-      _setTabSetClass: function() {
-
-        if(this.bare && this.noBottomBorder){
-          return "tabs-container__nav--bare-no-border";
-        } else if(this.bare){
-          return "tabs-container__nav--bare";
-        } else {
-          return "tabs-container__nav";
-        }
       },
 
       /**
@@ -235,9 +197,6 @@ Custom property | Description | Default
 
         //check if configured with bare styles
         if (tab) {
-          if (this.bare){
-            constructedClass = constructedClass + '-bare';
-          }
 
           var constructedClassMod =  constructedClass + '--selected';
           var cl = tab.$.tabtitle.classList;

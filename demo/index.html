@@ -37,28 +37,14 @@
       <px-demo-component>
 
         <div>
-          <template is="dom-if" if="{{props.bare.value}}">
-            <px-tab-set
-              id="tab-set1"
-              selected="{{props.selected.value}}"
-              bare
-              no-bottom-border>
-              <px-tab id="tab1">Bengal Tiger</px-tab>
-              <px-tab id="tab2">Black Spider Monkey</px-tab>
-              <px-tab id="tab3">Sumatran Elephant</px-tab>
-              <px-tab id="tab4">Ganges River Dolphin</px-tab>
-            </px-tab-set>
-          </template>
-          <template is="dom-if" if="{{!props.bare.value}}">
-            <px-tab-set
-              id="tab-set2"
-              selected="{{props.selected.value}}">
-              <px-tab id="tab1">Bengal Tiger</px-tab>
-              <px-tab id="tab2">Black Spider Monkey</px-tab>
-              <px-tab id="tab3">Sumatran Elephant</px-tab>
-              <px-tab id="tab4">Ganges River Dolphin</px-tab>
-            </px-tab-set>
-          </template>
+          <px-tab-set
+            id="tab-set1"
+            selected="{{props.selected.value}}">
+            <px-tab id="tab1">Bengal Tiger</px-tab>
+            <px-tab id="tab2">Black Spider Monkey</px-tab>
+            <px-tab id="tab3">Sumatran Elephant</px-tab>
+            <px-tab id="tab4">Ganges River Dolphin</px-tab>
+          </px-tab-set>
           <px-tab-pages selected="[[props.selected.value]]">
             <div id="tab1-content">
               <p>The Bengal tiger is found primarily in India with smaller populations in Bangladesh, Nepal, Bhutan, China and Myanmar. It is the most
@@ -107,32 +93,13 @@
           return [
             { configName: "Regular",
               configShowProps: [],
-              selected: "0",
-              bare: false,
-              noBottomBorder: false },
-
-            { configName: "Bare",
-              configShowProps: [],
-              selected: "0",
-              bare: true,
-              noBottomBorder: true }
+              selected: "0"}
           ]
         }
       }
     },
 
     demoProps: {
-      bare: {
-        type: Boolean,
-        defaultValue: false,
-        inputType: 'toggle'
-      },
-
-      noBottomBorder: {
-        type: Boolean,
-        defaultValue: false,
-        inputType: 'toggle'
-      },
 
       selected: {
         type: String,

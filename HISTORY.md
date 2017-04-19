@@ -1,10 +1,11 @@
-v1.0.1
+v1.0.0-prerelease-1
+==================
+* drop old style tabs, make all tabs 'bare'
+
+v1.0.0-prerelease
 ==================
 * migrate grays for redesign
-
-v1.0.0
-==================
-* Major bump picking up redesigned sub-dependencies
+* major bump picking up redesigned sub-dependencies
 
 v0.7.0
 ==================

@@ -40,7 +40,7 @@ They are typically used together like this:
       <style include="px-tab-styles"></style>
 
 
-      <div id="tabtitle">
+      <div id="tabtitle" class="tab-title">
         <content></content>
       </div>
     </template>
@@ -51,54 +51,11 @@ They are typically used together like this:
 
       is: 'px-tab',
 
-      /**
-       * Properties block, expose attribute values to the DOM via 'reflect'
-       *
-       * @property properties
-       * @type Object
-       */
       properties: {
-
-          /**
-         * Use the bare attribute underlined styles in the tabs (instead of the default squared tabs)
-         *
-         *      <px-tab bare></px-tab>
-         *
-         * @default false
-         */
-        bare: {
-          type: Boolean,
-          value: false,
-          observer: '_setClasses'
-        },
 
       },
       attached: function() {
-        this._setClasses();
         this.setAttribute('role','tab');
-      },
-      /**
-       * This function sets the classes on title, keeping the existing selected class in there, if it exists.
-       * @method _setClasses
-       */
-      _setClasses: function() {
-        var tabtitle = this.$.tabtitle,
-            cl = tabtitle.classList;
-        if (this.bare){
-          if (!cl.contains("tab-title-bare")) {
-            cl.add("tab-title-bare");
-          }
-          if (cl.contains("tab-title")) {
-            cl.remove("tab-title");
-          }
-        } else {
-          if (!cl.contains("tab-title")) {
-            cl.add("tab-title");
-          }
-          if (cl.contains("tab-title-bare")) {
-            cl.remove("tab-title-bare");
-          }
-        }
       }
     });
 </script>
