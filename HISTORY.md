@@ -1,6 +1,6 @@
 v1.0.0-prerelease-1
 ==================
-* drop old style tabs, make all tabs 'bare'
+* drop old style tabs, make all tabs 'bare', remove unit tests for bare
 
 v1.0.0-prerelease
 ==================
