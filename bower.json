@@ -5,6 +5,7 @@
     "px-tab-set.html"
   ],
   "ignore": [
+    "*.enc",
     "**/.*",
     "bower_components",
     "node_modules",
