@@ -20,7 +20,6 @@ common/abstract rules go in px-tabs-sketch.scss, not in this file.
 */
 
 // Settings
-@import "px-colors-design/_settings.colors.scss";
 @import "px-defaults-design/_settings.defaults.scss";
 
 // Generic
@@ -45,19 +44,19 @@ common/abstract rules go in px-tabs-sketch.scss, not in this file.
   vertical-align: middle;
   padding-bottom: 10px;
   margin: 1px 20px 0 0;
-  color: var(--px-tab-text-color, $gray13);
+  color: var(--px-tab-text-color, black);
   cursor: pointer;
 
   &:hover{
-    color: var(--px-tab-text-color--selected, $select-default);
+    color: var(--px-tab-text-color--selected, black);
     border-bottom: 1px solid transparent;
     cursor: pointer;
   }
 
   &--selected,
   &--selected:hover {
-    color: var(--px-tab-text-color--selected, $select-default);
-    border-bottom: 2px solid var(--px-tab-text-color--selected, $select-default);
+    color: var(--px-tab-text-color--selected, black);
+    border-bottom: 2px solid var(--px-tab-text-color--selected, black);
     font-weight: bold;
     cursor: pointer;
   }

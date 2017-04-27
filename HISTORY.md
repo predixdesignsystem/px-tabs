@@ -1,3 +1,7 @@
+v1.0.0-prerelease-2
+==================
+* remove default styles, update demo per design feedback
+
 v1.0.0-prerelease-1
 ==================
 * drop old style tabs, make all tabs 'bare', remove unit tests for bare
