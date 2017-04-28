@@ -44,21 +44,28 @@ common/abstract rules go in px-tabs-sketch.scss, not in this file.
   vertical-align: middle;
   padding-bottom: 10px;
   margin: 1px 20px 0 0;
-  color: var(--px-tab-text-color, black);
+  color: var(--px-tab-color, black);
   cursor: pointer;
 
-  &:hover{
-    color: var(--px-tab-text-color--selected, black);
-    border-bottom: 1px solid transparent;
-    cursor: pointer;
+  &:hover {
+    color: var(--px-tab-color--hover, black);
+  }
+  &:active {
+    color: var(--px-tab-color--active, black);
   }
 
-  &--selected,
-  &--selected:hover {
-    color: var(--px-tab-text-color--selected, black);
-    border-bottom: 2px solid var(--px-tab-text-color--selected, black);
+  &--selected {
+    color: var(--px-tab-color--selected, black);
+    border-bottom: 2px solid var(--px-tab-color--selected, black);
     font-weight: bold;
-    cursor: pointer;
+  }
+  &--selected:hover {
+    color: var(--px-tab-color--selected--hover, black);
+    border-bottom: 2px solid var(--px-tab-color--selected--hover, black);
+  }
+  &--selected:active {
+    color: var(--px-tab-color--selected--active, black);
+    border-bottom: 2px solid var(--px-tab-color--selected--active, black);
   }
 }
 
