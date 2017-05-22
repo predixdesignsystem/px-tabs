@@ -21,9 +21,9 @@
     "npm-debug.log"
   ],
   "dependencies": {
-    "polymer": "^1.6.0",
-    "iron-pages": "PolymerElements/iron-pages",
-    "iron-a11y-keys": "^1.0.7"
+    "polymer": "^1.9.1",
+    "iron-a11y-keys": "^1.0.7",
+    "iron-pages": "^1.0.0"
   },
   "devDependencies": {
     "px-starter-kit-design": "^1.0.0",
