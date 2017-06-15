@@ -17,7 +17,7 @@ The px-tab-set and px-tab components together provide the tabbed interface. The 
 Note: There is no limit on the number of tabs in a set, but there is no support for scrolling or wrapping.
 
 
-#### Usage
+### Usage
 ```
     <px-tab-set selected="{{selected}}">
         <px-tab>Tab 1</px-tab>
@@ -31,15 +31,16 @@ Note: There is no limit on the number of tabs in a set, but there is no support 
     </px-tab-pages>
 ```
 
-#### Styling
+### Styling
 The following custom properties are available for styling:
 
 Custom property | Description | Default
 ----------------|-------------|----------
-`--px-tab-text-color` | Text color for unselected tabs | `$black`
-`--px-tab-text-color--selected` | Text color for selected tab | `$select-blue-default`
-`--px-tab-border-color` | Border color for unselected tabs | `$gray5`
-`--px-tab-outline-style` | Outline style when tabs have focus |  `none`
+`--px-tab-color` | Text color for unselected tabs
+`--px-tab-color--hover` | Text color for unselected tabs on hover
+`--px-tab-color--active` | Text color for unselected tabs on press
+`--px-tab-color--selected` | Text and border color for selected tab
+`--px-tab-border-color` | Border color for unselected tabs
 
 @element px-tab-set
 @blurb Container for px-tab elements
