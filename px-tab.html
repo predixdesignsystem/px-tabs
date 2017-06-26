@@ -10,7 +10,7 @@
 
 <!--
 The px-tab-set and px-tab components together provide the tabbed interface. The tabbed content is expected
-to be contained in a separate component (px-tab-pages).
+to be contained in a separate component (iron-pages).
 
 Note: There is no limit on number of tabs in the set, but there is no scrolling support.
 
@@ -40,22 +40,19 @@ They are typically used together like this:
       <style include="px-tab-styles"></style>
 
 
-      <div id="tabtitle" class="tab-title">
+      <div class="tab-title">
         <content></content>
       </div>
     </template>
 </dom-module>
 
 <script>
-    Polymer({
+  Polymer({
 
-      is: 'px-tab',
+    is: 'px-tab',
 
-      properties: {
-
-      },
-      attached: function() {
-        this.setAttribute('role','tab');
-      }
-    });
+    attached: function() {
+      this.setAttribute('role','tab');
+    }
+  });
 </script>

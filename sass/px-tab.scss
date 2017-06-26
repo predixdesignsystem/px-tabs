@@ -42,12 +42,12 @@
   &:active {
     color: var(--px-tab-color--active, black);
   }
+}
 
-  &--selected {
-    color: var(--px-tab-color--selected, black);
-    border-bottom: 2px solid var(--px-tab-color--selected, black);
-    font-weight: bold;
-  }
+:host-context(.iron-selected) .tab-title {
+  color: var(--px-tab-color--selected, black);
+  border-bottom: 2px solid var(--px-tab-color--selected, black);
+  font-weight: bold;
 }
 
 // Trumps

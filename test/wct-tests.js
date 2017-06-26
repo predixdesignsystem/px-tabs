@@ -15,11 +15,10 @@ document.addEventListener("WebComponentsReady", function() {
 
     test('Selected tab and tab title should include selected classes', function() {
       assert.isTrue(tabs[0].classList.contains('iron-selected'));
-      assert.isTrue(tabs[0].childNodes[1].classList.contains('tab-title--selected'));
     });
 
     test('Test change tab event fires', function(done) {
-      document.addEventListener('px-tab-changed', function(evt){
+      window.addEventListener('px-tab-changed', function(evt){
         assert.equal(evt.detail.tabID, 'tab2');
         done();
       });
@@ -28,9 +27,7 @@ document.addEventListener("WebComponentsReady", function() {
 
     test('After switching tabs, selected classes should be removed and added', function() {
       assert.isFalse(tabs[0].classList.contains('iron-selected'));
-      assert.isFalse(tabs[0].childNodes[1].classList.contains('tab-title--selected'));
       assert.isTrue(tabs[1].classList.contains('iron-selected'));
-      assert.isTrue(tabs[1].childNodes[1].classList.contains('tab-title--selected'));
     });
 
   });
