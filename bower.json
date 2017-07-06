@@ -22,8 +22,8 @@
   ],
   "dependencies": {
     "polymer": "^1.9.1",
-    "iron-a11y-keys": "^1.0.7",
-    "iron-pages": "^1.0.0"
+    "iron-a11y-keys": "^2.0.0",
+    "iron-pages": "^2.0.0"
   },
   "devDependencies": {
     "px-starter-kit-design": "^1.0.0",
