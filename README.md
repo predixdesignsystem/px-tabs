@@ -1,10 +1,8 @@
-#Px-Tabs [![Build Status](https://travis-ci.org/PredixDev/px-tabs.svg?branch=master)](https://travis-ci.org/PredixDev/px-tabs)
-
-[![px-tabs demo](px-tab-set.png?raw=true)](https://predixdev.github.io/px-tabs/)
+# px-tabs [![Build Status](https://travis-ci.org/PredixDev/px-tabs.svg?branch=master)](https://travis-ci.org/PredixDev/px-tabs)
 
 ## Overview
 
-Px-tabs is a Predix UI component.
+Px-tabs is a Predix UI component used for organizing content on multiple tabs
 
 ## Usage
 
