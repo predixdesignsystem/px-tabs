@@ -1,12 +1,5 @@
-
-<!--
-    Relative paths assume component is being run from inside an app or another component, where dependencies are flat
-    siblings. When this component is run from its own repo (e.g. ui tests, examples), we assume the server is started with
-    'grunt depserve' (or similar server setup) to enable correct finding of bower dependencies for local runs
-    See https://github.com/jreichenberg/grunt-dep-serve#why-do-we-need-this
--->
 <link rel="import" href="../polymer/polymer.html"/>
-
+<link rel="import" href="css/px-tab-styles.html">
 
 <!--
 The px-tab-set and px-tab components together provide the tabbed interface. The tabbed content is expected
@@ -14,11 +7,9 @@ to be contained in a separate component (iron-pages).
 
 Note: There is no limit on number of tabs in the set, but there is no scrolling support.
 
-
 ### Usage
 
-
-They are typically used together like this:
+The px-tab-set and px-tab components are typically used together like this:
 ```
 <px-tab-set selected="{{selected}}">
     <px-tab>Tab 1</px-tab>
@@ -32,9 +23,6 @@ They are typically used together like this:
 @homepage index.html
 @demo index.html
 -->
-
-<link rel="import" href="css/px-tab-styles.html">
-
 <dom-module id="px-tab">
     <template>
       <style include="px-tab-styles"></style>
