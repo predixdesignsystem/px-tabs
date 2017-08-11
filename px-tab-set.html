@@ -1,20 +1,13 @@
-
-<!--
-    Relative paths assume component is being run from inside an app or another component, where dependencies are flat
-    siblings. When this component is run from its own repo (e.g. ui tests, examples), we assume the server is started with
-    'grunt depserve' (or similar server setup) to enable correct finding of bower dependencies for local runs
-    See https://github.com/jreichenberg/grunt-dep-serve#why-do-we-need-this
--->
 <link rel="import" href="../polymer/polymer.html"/>
 <link rel="import" href="px-tab.html"/>
 <link rel="import" href="../iron-selector/iron-selectable.html"/>
 <link rel="import" href="../iron-a11y-keys/iron-a11y-keys.html"/>
+<link rel="import" href="css/px-tab-set-styles.html"/>
 
 <!--
 The px-tab-set and px-tab components together provide the tabbed interface. The tabbed content is expected to be contained in a separate iron-pages component.
 
 Note: There is no limit on the number of tabs in a set, but there is no support for scrolling or wrapping.
-
 
 ### Usage
 ```
@@ -46,9 +39,6 @@ Custom property | Description
 @homepage index.html
 @demo index.html
 -->
-
-<link rel="import" href="css/px-tab-set-styles.html">
-
 <dom-module id="px-tab-set">
     <template>
       <style include="px-tab-set-styles"></style>
