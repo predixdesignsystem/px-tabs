@@ -2,20 +2,20 @@
 <link rel="import" href="px-tab.html"/>
 <link rel="import" href="../iron-selector/iron-selectable.html"/>
 <link rel="import" href="../iron-a11y-keys/iron-a11y-keys.html"/>
-<link rel="import" href="css/px-tab-set-styles.html"/>
+<link rel="import" href="css/px-tabs-styles.html"/>
 
 <!--
-The px-tab-set and px-tab components together provide the tabbed interface. The tabbed content is expected to be contained in a separate iron-pages component.
+The px-tabs and px-tab components together provide the tabbed interface. The tabbed content is expected to be contained in a separate iron-pages component.
 
 Note: There is no limit on the number of tabs in a set, but there is no support for scrolling or wrapping.
 
 ### Usage
 ```
-    <px-tab-set selected="{{selected}}">
+    <px-tabs selected="{{selected}}">
         <px-tab>Tab 1</px-tab>
         <px-tab>Tab 2</px-tab>
         <px-tab>Tab 3</px-tab>
-    </px-tab-set>
+    </px-tabs>
     <iron-pages selected="{{selected}}">
         <div>Tab 1 content</div>
         <div>Tab 2 content</div>
@@ -34,14 +34,14 @@ Custom property | Description
 `--px-tab-color--selected` | Text and border color for selected tab
 `--px-tab-border-color` | Border color for unselected tabs
 
-@element px-tab-set
+@element px-tabs
 @blurb Container for px-tab elements
 @homepage index.html
 @demo index.html
 -->
-<dom-module id="px-tab-set">
+<dom-module id="px-tabs">
     <template>
-      <style include="px-tab-set-styles"></style>
+      <style include="px-tabs-styles"></style>
 
       <div id="container" class="tabs-container" tabindex="0">
         <div class="tabs-container__nav flex">
@@ -57,7 +57,7 @@ Custom property | Description
 <script>
   Polymer({
 
-    is: 'px-tab-set',
+    is: 'px-tabs',
 
     behaviors: [
       Polymer.IronSelectableBehavior

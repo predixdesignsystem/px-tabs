@@ -1,3 +1,7 @@
+v2.0.0
+==================
+* Rename px-tab-set to px-tabs.
+
 v1.0.2
 ==================
 * fix comment for analyzer

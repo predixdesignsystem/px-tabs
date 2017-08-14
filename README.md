@@ -25,16 +25,16 @@ bower install px-tabs --save
 Second, import the component in your application with the following tag in your head:
 
 ```
-<link rel="import" href="/bower_components/px-tabs/px-tab-set.html"/>
+<link rel="import" href="/bower_components/px-tabs/px-tabs.html"/>
 ```
 
 Finally, use the component in your application:
 ```
-    <px-tab-set selected="{{selected}}">
+    <px-tabs selected="{{selected}}">
         <px-tab>Tab 1</px-tab>
         <px-tab>Tab 2</px-tab>
         <px-tab>Tab 3</px-tab>
-    </px-tab-set>
+    </px-tabs>
     <px-tab-pages selected="{{selected}}">
         <section>Tab 1 content</section>
         <section>Tab 2 content</section>

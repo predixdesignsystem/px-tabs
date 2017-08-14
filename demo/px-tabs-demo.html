@@ -37,14 +37,14 @@
       <px-demo-component>
 
         <div>
-          <px-tab-set
+          <px-tabs
             id="tab-set1"
             selected="{{props.selected.value}}">
             <px-tab id="tab1">Bengal Tiger</px-tab>
             <px-tab id="tab2">Black Spider Monkey</px-tab>
             <px-tab id="tab3">Sumatran Elephant</px-tab>
             <px-tab id="tab4">Ganges River Dolphin</px-tab>
-          </px-tab-set>
+          </px-tabs>
           <iron-pages selected="[[props.selected.value]]">
             <div id="tab1-content">
               <p>The Bengal tiger is found primarily in India with smaller populations in Bangladesh, Nepal, Bhutan, China and Myanmar. It is the most
@@ -69,7 +69,7 @@
     </px-demo-interactive>
 
     <!-- API Viewer -->
-    <px-demo-api-viewer source="px-tab-set" hide='["activateEvent","attrForSelected","fallbackSelection","selectable","selectedAttribute","selectedClass","selectedItem","items","forceSynchronousItemUpdate","indexOf","selectIndex","iron-activate","iron-items-changed","iron-select","iron-deselect"]'></px-demo-api-viewer>
+    <px-demo-api-viewer source="px-tabs" hide='["activateEvent","attrForSelected","fallbackSelection","selectable","selectedAttribute","selectedClass","selectedItem","items","forceSynchronousItemUpdate","indexOf","selectIndex","iron-activate","iron-items-changed","iron-select","iron-deselect"]'></px-demo-api-viewer>
 
     <!-- Footer -->
     <px-demo-footer></px-demo-footer>
