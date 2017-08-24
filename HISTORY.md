@@ -1,6 +1,10 @@
+v2.0.1
+==================
+* add horizontal padding
+
 v2.0.0
 ==================
-* Rename px-tab-set to px-tabs.
+* Rename px-tab-set to px-tabs
 
 v1.0.2
 ==================
