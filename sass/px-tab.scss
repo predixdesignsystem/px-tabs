@@ -44,7 +44,7 @@
   }
 }
 
-:host-context(.iron-selected) .tab-title {
+:host-context(.iron-selected) > .tab-title {
   color: var(--px-tab-color--selected, black);
   border-bottom: 2px solid var(--px-tab-color--selected, black);
   font-weight: bold;

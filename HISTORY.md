@@ -1,3 +1,7 @@
+v2.0.2
+==================
+* add child selector to prevent tab display issue
+
 v2.0.1
 ==================
 * add horizontal padding
