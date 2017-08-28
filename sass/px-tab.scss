@@ -24,6 +24,11 @@
 :host {
   @extend %flex;
   background-color: transparent;
+  &.iron-selected > .tab-title {
+    color: var(--px-tab-color--selected, black);
+    border-bottom: 2px solid var(--px-tab-color--selected, black);
+    font-weight: bold;
+  }
 }
 
 .tab-title {
@@ -42,12 +47,6 @@
   &:active {
     color: var(--px-tab-color--active, black);
   }
-}
-
-:host-context(.iron-selected) > .tab-title {
-  color: var(--px-tab-color--selected, black);
-  border-bottom: 2px solid var(--px-tab-color--selected, black);
-  font-weight: bold;
 }
 
 // Trumps
