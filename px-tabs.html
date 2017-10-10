@@ -45,7 +45,7 @@ Custom property | Description
 
       <div id="container" class="tabs-container" tabindex="0">
         <div class="tabs-container__nav flex">
-          <content id="tabdefs" select="*"></content>
+          <slot></slot>
         </div>
       </div>
 
@@ -67,13 +67,8 @@ Custom property | Description
       'iron-select' : '_onIronSelect'
     },
 
-    properties: {
-      _target: {
-        type: Object,
-        value: function() {
-          return this.$.container;
-        }
-      }
+    ready: function() {
+      this._target = this.$.container;
     },
 
     attached: function() {
