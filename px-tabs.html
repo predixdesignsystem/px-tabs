@@ -45,7 +45,7 @@ Custom property | Description
 
       <div id="container" class="tabs-container" tabindex="0">
         <div class="tabs-container__nav flex">
-          <content id="tabdefs" select="*"></content>
+          <slot id="tabdefs" select="*"></slot>
         </div>
       </div>
 
@@ -71,13 +71,14 @@ Custom property | Description
       _target: {
         type: Object,
         value: function() {
-          return this.$.container;
+          return '';
         }
       }
     },
 
     attached: function() {
       this.setAttribute('role','tablist');
+      this._target = this.$.container;
     },
     /**
       * Move forward by one tab, with wraparound from last to first.
