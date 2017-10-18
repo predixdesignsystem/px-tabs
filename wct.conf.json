@@ -3,7 +3,8 @@
   "plugins": {
     "local": {
       "browsers": [
-        "chrome"
+        "chrome",
+        "firefox"
       ]
     },
     "sauce": {
@@ -28,6 +29,6 @@
     }
   },
   "suites": [
-    "test/fixture.html"
+    "test/index.html"
   ]
 }
