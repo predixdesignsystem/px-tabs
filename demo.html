@@ -5,17 +5,18 @@
     <title></title>
     <script src="../webcomponentsjs/webcomponents-lite.js"></script>
     <link rel="import" href="../polymer/polymer.html">
+    <link rel="import" href="../polymer/lib/elements/dom-bind.html">
     <link rel="import" href="../px-theme/px-theme-styles.html">
     <link rel="import" href="px-tabs.html">
     <link rel="import" href="../iron-pages/iron-pages.html" />
 
+  </head>
+  <body>
     <custom-style>
       <style include="px-theme-styles" is="custom-style"></style>
     </custom-style>
-  </head>
-  <body>
     <dom-bind>
-      <template>
+      <template is="dom-bind">
         <px-tabs
           id="tab-set1"
           selected="{{value}}">
@@ -24,7 +25,7 @@
           <px-tab id="tab3">Sumatran Elephant</px-tab>
           <px-tab id="tab4">Ganges River Dolphin</px-tab>
         </px-tabs>
-        <iron-pages selected="[[value]]">
+        <iron-pages selected="{{value}}">
           <div id="tab1-content">
             <p>The Bengal tiger is found primarily in India with smaller populations in Bangladesh, Nepal, Bhutan, China and Myanmar. It is the most
               numerous of all tiger subspecies with more than 2,500 left in the wild. The creation of India’s tiger reserves in the 1970s helped to
