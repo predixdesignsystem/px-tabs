@@ -104,6 +104,11 @@ Custom property | Description
        * @event px-tab-changed
        */
       this.fire('px-tab-changed', {'tabID':Polymer.dom(evt).event.detail.item.id});
+      // this.dispatchEvent(new CustomEvent('px-tab-changed',
+      //   { bubbles: true,
+      //     composed: true,
+      //     'tabID' : Polymer.dom(evt).event.detail.item.id
+      //   }));
     }
   });
 </script>

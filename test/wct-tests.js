@@ -9,28 +9,38 @@ describe('Unit Tests for Tabs', function() {
   });
 
   it('Test tab style matches default class tab-title', function() {
-    debugger;
     flush(function(){
       assert.isTrue(Polymer.dom(tabs[0].root).querySelectorAll('.tab-title').length === 1);
     });
   });
 
-  // it('Selected tab and tab title should include selected classes', function() {
-  //   assert.isTrue(tabs[0].classList.contains('iron-selected'));
-  // });
-  //
-  // it('Test change tab event fires', function(done) {
-  //   window.addEventListener('px-tab-changed', function(evt){
-  //     flush(function(){
-  //       assert.equal(evt.detail.tabID, 'tab2');
-  //       done();
-  //     });
-  //   });
-  //   tabs[1].click();
-  // });
-  //
-  // it('After switching tabs, selected classes should be removed and added', function() {
-  //   assert.isFalse(tabs[0].classList.contains('iron-selected'));
-  //   assert.isTrue(tabs[1].classList.contains('iron-selected'));
-  // });
+  it('Selected tab and tab title should include selected classes', function() {
+    flush(function(){
+      assert.isTrue(tabs[0].classList.contains('iron-selected'));
+    });
+  });
+
+  it('Test change tab event fires', function(done) {
+    tabElement.addEventListener('px-tab-changed', function(evt){
+      flush(()=>{
+        assert.equal(evt.detail.tabID, 'tab2');
+        done();
+      });
+    });
+    flush(()=>{
+      tabs[1].click();
+    });
+  });
+
+  it('After switching tabs, selected classes should be removed and added', function() {
+
+    flush(()=>{
+      assert.isTrue(tabs[0].classList.contains('iron-selected'));
+    });
+    tabs[1].click();
+    flush(()=>{
+      assert.isFalse(tabs[0].classList.contains('iron-selected'));
+      assert.isTrue(tabs[1].classList.contains('iron-selected'));
+    });
+  });
 });
