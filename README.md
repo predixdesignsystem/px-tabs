@@ -28,18 +28,18 @@ Second, import the component in your application with the following tag in your 
 <link rel="import" href="/bower_components/px-tabs/px-tabs.html"/>
 ```
 
-Finally, use the component in your application:
+Finally, use the component in your application. We recommend using [iron-pages](https://www.webcomponents.org/element/PolymerElements/iron-pages), but you could bind the `selected` property of px-tabs to whatever mechanism you want to display the associated content below the px-tabs component.
 ```
     <px-tabs selected="{{selected}}">
         <px-tab>Tab 1</px-tab>
         <px-tab>Tab 2</px-tab>
         <px-tab>Tab 3</px-tab>
     </px-tabs>
-    <px-tab-pages selected="{{selected}}">
-        <section>Tab 1 content</section>
-        <section>Tab 2 content</section>
-        <section>Tab 3 content</section>
-    </px-tab-pages>
+    <iron-pages selected="{{selected}}">
+        <div>Tab 1 content</div>
+        <div>Tab 2 content</div>
+        <div>Tab 3 content</div>
+    </iron-pages>
 ```
 ## Documentation
 
@@ -73,6 +73,6 @@ Navigate to the root of that server (e.g. http://localhost:8080/) in a browser t
 
 ## Known Issues
 
-* This px-tabs components currently don't support in-component scrolling when there are too many tabs.
+* The px-tabs components currently doesn't support in-component scrolling or wrapping when there are too many tabs.
 
 Please use [Github Issues](https://github.com/PredixDev/px-tabs/issues) to submit any bugs you might find.
