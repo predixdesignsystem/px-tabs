@@ -29,11 +29,11 @@ describe('Unit Tests for Tabs', function() {
   // });
 
   it('After switching tabs, selected classes should be removed and added', function() {
-    flush(()=>{
+    flush(function(){
       assert.isTrue(tabs[0].classList.contains('iron-selected'));
     });
     tabs[1].click();
-    flush(()=>{
+    flush(function(){
       assert.isFalse(tabs[0].classList.contains('iron-selected'));
       assert.isTrue(tabs[1].classList.contains('iron-selected'));
     });
