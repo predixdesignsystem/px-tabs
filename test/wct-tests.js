@@ -17,13 +17,12 @@ describe('Unit Tests for Tabs', function(done) {
     });
   });
 
-  // it('Selected tab and tab title should include selected classes', function(done) {
-  //   flush(function(){
-  //     debugger;
-  //     assert.isTrue(tabs[0].classList.contains('iron-selected'));
-  //     done();
-  //   });
-  // });
+  it('Selected tab and tab title should include selected classes', function(done) {
+    flush(function(){
+      assert.isTrue(tabs[0].classList.contains('iron-selected'));
+      done();
+    });
+  });
 
 
   it('After switching tabs, selected classes should be removed and added', function() {
