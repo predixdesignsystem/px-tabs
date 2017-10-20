@@ -103,12 +103,10 @@ Custom property | Description
        * evt.detail will contain the ID of the newly selected tab.
        * @event px-tab-changed
        */
-      this.fire('px-tab-changed', {'tabID':Polymer.dom(evt).event.detail.item.id});
-      // this.dispatchEvent(new CustomEvent('px-tab-changed',
-      //   { bubbles: true,
-      //     composed: true,
-      //     'tabID' : Polymer.dom(evt).event.detail.item.id
-      //   }));
+       console.log('here2');
+      this.fire('px-tab-changed',
+                {'tabID':Polymer.dom(evt).event.detail.item.id},
+                {bubbles: true, cancelable: false});
     }
   });
 </script>

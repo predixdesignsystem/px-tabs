@@ -24,7 +24,6 @@ describe('Unit Tests for Tabs', function(done) {
     });
   });
 
-
   it('After switching tabs, selected classes should be removed and added', function() {
     flush(function(){
       assert.isTrue(tabs[0].classList.contains('iron-selected'));
@@ -35,4 +34,14 @@ describe('Unit Tests for Tabs', function(done) {
       assert.isTrue(tabs[1].classList.contains('iron-selected'));
     });
   });
+
+  // it('Test change tab event fires', function(done) {
+  //   window.addEventListener('px-tab-changed', function(evt){
+  //     assert.equal(evt.detail.tabID, 'tab2');
+  //     done();
+  //   });
+  //   // tabs[1].click();
+  //   tabs[1].dispatchEvent(new CustomEvent('click'));
+  //
+  // });
 });
