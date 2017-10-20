@@ -8,15 +8,16 @@ describe('Unit Tests for Tabs', function() {
     assert.isNotNull(tabElement);
   });
 
-  // it('Test tab style matches default class tab-title', function(done) {
-  //   flush(function(){
-  //     assert.isTrue(Polymer.dom(tabs[0].root).querySelectorAll('.tab-title').length === 1);
-  //     done();
-  //   });
-  // });
+  it('Test tab style matches default class tab-title', function(done) {
+    flush(function(){
+      assert.isTrue(Polymer.dom(tabs[0].root).querySelectorAll('.tab-title').length === 1);
+      done();
+    });
+  });
 
   // it('Selected tab and tab title should include selected classes', function(done) {
   //   flush(function(){
+  //     debugger;
   //     assert.isTrue(tabs[0].classList.contains('iron-selected'));
   //     done();
   //   });
