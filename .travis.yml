@@ -1,8 +1,7 @@
 sudo: false
 dist: trusty
 language: node_js
-node_js:
-  - "node"
+node_js: stable
 branches:
   except:
   - gh-pages
@@ -13,15 +12,13 @@ addons:
     - google-chrome
     packages:
     - google-chrome-stable
+  sauce_connect: true
 before_script:
-- yarn add polymer-cli
-- yarn add bower
-- export PATH=$PWD/node_modules/.bin:$PATH
+- yarn global add polymer-cli
 - polymer install --variants
 script:
-- xvfb-run polymer test --skip-plugin sauce
-- if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then polymer test --plugin sauce --skip-plugin
-  local; fi
+- xvfb-run polymer test
+- if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then polymer test -s 'default'; fi
 after_success:
 - if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then openssl aes-256-cbc -k "$DEPLOYSECRET"
   -in deploy.enc -out deploy_key -d; fi
