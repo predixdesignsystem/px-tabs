@@ -3,12 +3,18 @@
   "plugins": {
     "local": {
       "browsers": [
-        "chrome"
+        "chrome",
+        "firefox"
       ]
     },
     "sauce": {
       "disabled": true,
       "browsers": [
+        {
+          "browserName": "microsoftedge",
+          "platform": "Windows 10",
+          "version": ""
+        },
         {
           "browserName": "internet explorer",
           "platform": "Windows 8.1",
@@ -16,13 +22,13 @@
         },
         {
           "browserName": "safari",
-          "platform": "OS X 10.11",
-          "version": "9"
+          "platform": "OS X 10.12",
+          "version": "10"
         },
         {
           "browserName": "safari",
-          "platform": "OS X 10.11",
-          "version": "10"
+          "platform": "OS X 10.12",
+          "version": "11"
         }
       ]
     }
