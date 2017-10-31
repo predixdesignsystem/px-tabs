@@ -1,3 +1,7 @@
+v2.0.4
+==================
+* add device flags
+
 v2.0.3
 ==================
 * add child selector to prevent tab display issue
