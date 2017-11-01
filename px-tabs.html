@@ -1,7 +1,7 @@
 <link rel="import" href="../polymer/polymer.html"/>
-<link rel="import" href="px-tab.html"/>
 <link rel="import" href="../iron-selector/iron-selectable.html"/>
 <link rel="import" href="../iron-a11y-keys/iron-a11y-keys.html"/>
+<link rel="import" href="px-tab.html"/>
 <link rel="import" href="css/px-tabs-styles.html"/>
 
 <!--
@@ -40,23 +40,22 @@ Custom property | Description
 @demo index.html
 -->
 <dom-module id="px-tabs">
-    <template>
-      <style include="px-tabs-styles"></style>
+  <template>
+    <style include="px-tabs-styles"></style>
 
-      <div id="container" class="tabs-container" tabindex="0">
-        <div class="tabs-container__nav flex">
-          <slot id="tabdefs" select="*"></slot>
-        </div>
+    <div id="container" class="tabs-container" tabindex="0">
+      <div class="tabs-container__nav flex">
+        <slot id="tabdefs"></slot>
       </div>
+    </div>
 
-      <iron-a11y-keys target="[[_target]]" keys="right up" on-keys-pressed="_increment"></iron-a11y-keys>
-      <iron-a11y-keys target="[[_target]]" keys="left down" on-keys-pressed="_decrement"></iron-a11y-keys>
-    </template>
+    <iron-a11y-keys target="[[_target]]" keys="right up" on-keys-pressed="_increment"></iron-a11y-keys>
+    <iron-a11y-keys target="[[_target]]" keys="left down" on-keys-pressed="_decrement"></iron-a11y-keys>
+  </template>
 </dom-module>
 
 <script>
   Polymer({
-
     is: 'px-tabs',
 
     behaviors: [
@@ -80,33 +79,35 @@ Custom property | Description
       this.setAttribute('role','tablist');
       this._target = this.$.container;
     },
+
     /**
-      * Move forward by one tab, with wraparound from last to first.
-      */
+     * Move forward by one tab, with wraparound from last to first.
+     */
     _increment: function(evt) {
       evt.detail.keyboardEvent.preventDefault();
       this.selectNext();
     },
+
     /**
-      * Move backward by one tab, with wraparound from first to last.
-      */
+     * Move backward by one tab, with wraparound from first to last.
+     */
     _decrement: function(evt) {
       evt.detail.keyboardEvent.preventDefault();
       this.selectPrevious();
     },
+
     /**
      * Fires an event when the tab is changed.
      */
     _onIronSelect: function(evt) {
-      /**
-       * Event fired when the selected tab is changed.
-       * evt.detail will contain the ID of the newly selected tab.
-       * @event px-tab-changed
-       */
-       console.log('here2');
-      this.fire('px-tab-changed',
-                {'tabID':Polymer.dom(evt).event.detail.item.id},
-                {bubbles: true, cancelable: false});
+      this.fire('px-tab-changed', {
+        tabID: Polymer.dom(evt).event.detail.item.id
+      }, {bubbles: true, cancelable: false});
     }
+    /**
+     * Event fired when the selected tab is changed.
+     * evt.detail will contain the ID of the newly selected tab.
+     * @event px-tab-changed
+     */
   });
 </script>
