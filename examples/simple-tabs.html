@@ -1,29 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <title></title>
-    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
-    <link rel="import" href="../polymer/polymer.html">
-    <link rel="import" href="../polymer/lib/elements/dom-bind.html">
-    <link rel="import" href="../px-theme/px-theme-styles.html">
-    <link rel="import" href="px-tabs.html">
-    <link rel="import" href="../iron-pages/iron-pages.html" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>px-tabs demo</title>
 
+    <!-- Load polyfills and Polymer library -->
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../../polymer/polymer.html"/>
+    <link rel="import" href="../../polymer/lib/elements/dom-bind.html">
+
+    <!-- Load theme -->
+    <link rel="import" href="../../px-theme/px-theme-styles.html"/>
+    <custom-style>
+      <style is="custom-style" include="px-theme-styles"></style>
+    </custom-style>
+
+    <!-- Load components -->
+    <link rel="import" href="../px-tabs.html"/>
+    <link rel="import" href="../../iron-pages/iron-pages.html" />
   </head>
   <body>
-    <custom-style>
-      <style include="px-theme-styles" is="custom-style"></style>
-    </custom-style>
     <dom-bind>
       <template is="dom-bind">
-        <px-tabs
-          id="tab-set1"
-          selected="{{value}}">
-          <px-tab id="tab1">Bengal Tiger</px-tab>
-          <px-tab id="tab2">Black Spider Monkey</px-tab>
-          <px-tab id="tab3">Sumatran Elephant</px-tab>
-          <px-tab id="tab4">Ganges River Dolphin</px-tab>
+        <px-tabs id="tab-set1" selected="{{value}}">
+           <px-tab id="tab1">Bengal Tiger</px-tab>
+           <px-tab id="tab2">Black Spider Monkey</px-tab>
+           <px-tab id="tab3">Sumatran Elephant</px-tab>
+           <px-tab id="tab4">Ganges River Dolphin</px-tab>
         </px-tabs>
         <iron-pages selected="{{value}}">
           <div id="tab1-content">
