@@ -1,3 +1,7 @@
+v2.1.2
+==================
+* add mixin for tab container (#15)
+
 v2.1.1
 ==================
 * Fix demo for IE
