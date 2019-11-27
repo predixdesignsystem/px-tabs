@@ -23,24 +23,49 @@ limitations under the License.
 
     <!-- BOILERPLATE -->
     <!-- load webcomponents.js polyfill for browsers that don't support native web components -->
-    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../../@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
     <!-- load web-component-tester test runner script -->
-    <script src="../../web-component-tester/browser.js"></script>
+    <script src="../../wct-browser-legacy/browser.js"></script>
     <!-- load and apply default theme, required to run tests -->
-    <link rel="import" href="../../px-theme/px-theme-styles.html"/>
-    <custom-style>
+    <script type="module" src="../../px-theme/px-theme-styles.js"></script>
+    <!-- FIXME(polymer-modulizer):
+        These imperative modules that innerHTML your HTML are
+        a hacky way to be sure that any mixins in included style
+        modules are ready before any elements that reference them are
+        instantiated, otherwise the CSS @apply mixin polyfill won't be
+        able to expand the underlying CSS custom properties.
+        See: https://github.com/Polymer/polymer-modulizer/issues/154
+        -->
+    <script type="module">
+const $_documentContainer = document.createElement('template');
+
+$_documentContainer.innerHTML = `<custom-style>
       <style include="px-theme-styles" is="custom-style"></style>
-    </custom-style>
+    </custom-style>`;
+
+document.body.appendChild($_documentContainer.content);
+</script>
 
     <!-- UNIQUE TO THIS COMPONENT -->
     <!-- import web components to test -->
-    <link rel="import" href="../px-tabs.html"/>
+    <script type="module">
+const $_documentContainer = document.createElement('template');
+$_documentContainer.innerHTML = `<link rel="import" href="../px-tabs.html">`;
+document.body.appendChild($_documentContainer.content);
+</script>/script>
     <!-- load test script -->
-    <script src="px-tabs-tests.js"></script>
+    <script src="./px-tabs-tests.js"></script>
   </head>
   <body>
-    <h3>Web Component Test : Fixture for px-progress-bar</h3>
-    <test-fixture id="PxTabsFixture">
+    <script type="module">
+const $_documentContainer = document.createElement('template');
+$_documentContainer.innerHTML = `<h3>Web Component Test : Fixture for px-progress-bar</h3>`;
+document.body.appendChild($_documentContainer.content);
+</script>
+    <script type="module">
+const $_documentContainer = document.createElement('template');
+
+$_documentContainer.innerHTML = `<test-fixture id="PxTabsFixture">
       <template>
         <div>
           <px-tabs id="tab-set" selected="0">
@@ -49,8 +74,11 @@ limitations under the License.
             <px-tab id="tab3">Sumatran Elephant</px-tab>
             <px-tab id="tab4">Ganges River Dolphin</px-tab>
           </px-tabs>
-        </template>
-      </div>
-    </test-fixture>
+        </div></template>
+      
+    </test-fixture>`;
+
+document.body.appendChild($_documentContainer.content);
+</script>
   </body>
 </html>

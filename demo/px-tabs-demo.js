@@ -1,4 +1,4 @@
-<!--
+/*
 Copyright (c) 2018, General Electric
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,32 +12,32 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
--->
+*/
+/* Common imports */
+/* Common demo imports */
+/* Imports for this component */
+/* Demo DOM module */
+/*
+  FIXME(polymer-modulizer): the above comments were extracted
+  from HTML and may be out of place here. Review them and
+  then delete this comment!
+*/
+import '@polymer/polymer/polymer-legacy.js';
 
-<!-- Common imports -->
-<link rel="import" href="../../polymer/polymer.html" />
-
-<!-- Common demo imports -->
-<link rel="import" href="../../px-demo/px-demo-header.html" />
-<link rel="import" href="../../px-demo/px-demo-api-viewer.html" />
-<link rel="import" href="../../px-demo/px-demo-footer.html" />
-<link rel="import" href="../../px-demo/px-demo-configs.html" />
-<link rel="import" href="../../px-demo/px-demo-props.html" />
-<link rel="import" href="../../px-demo/px-demo-interactive.html" />
-<link rel="import" href="../../px-demo/px-demo-component-snippet.html" />
-
-<!-- Imports for this component -->
-
-<link rel="import" href="../../iron-pages/iron-pages.html" />
-
-<!-- Demo DOM module -->
-<dom-module id="px-tabs-demo">
-  <template>
+import 'px-demo/px-demo-header.js';
+import 'px-demo/px-demo-api-viewer.js';
+import 'px-demo/px-demo-footer.js';
+import 'px-demo/px-demo-configs.js';
+import 'px-demo/px-demo-props.js';
+import 'px-demo/px-demo-interactive.js';
+import 'px-demo/px-demo-component-snippet.js';
+import '@polymer/iron-pages/iron-pages.js';
+import { Polymer } from '@polymer/polymer/lib/legacy/polymer-fn.js';
+import { html } from '@polymer/polymer/lib/utils/html-tag.js';
+Polymer({
+  _template: html`
     <!-- Header -->
-    <px-demo-header
-        module-name="px-tabs"
-        description="A classic design for organizing content on multiple tabs."
-        mobile tablet desktop>
+    <px-demo-header module-name="px-tabs" description="A classic design for organizing content on multiple tabs." mobile="" tablet="" desktop="">
     </px-demo-header>
 
     <!-- Interactive -->
@@ -52,9 +52,7 @@ limitations under the License.
       <px-demo-component slot="px-demo-component">
 
         <div>
-          <px-tabs
-            id="tab-set1"
-            selected="{{props.selected.value}}">
+          <px-tabs id="tab-set1" selected="{{props.selected.value}}">
             <px-tab id="tab1">Bengal Tiger</px-tab>
             <px-tab id="tab2">Black Spider Monkey</px-tab>
             <px-tab id="tab3">Sumatran Elephant</px-tab>
@@ -76,56 +74,46 @@ limitations under the License.
       </px-demo-component>
       <!-- END Component ------------------------------------------------------>
 
-      <px-demo-component-snippet
-          slot="px-demo-component-snippet"
-          element-properties="{{props}}"
-          element-name="px-tabs"
-          links-includes='["iron-pages/iron-pages.html"]'>
+      <px-demo-component-snippet slot="px-demo-component-snippet" element-properties="{{props}}" element-name="px-tabs" links-includes="[&quot;iron-pages/iron-pages.html&quot;]">
       </px-demo-component-snippet>
     </px-demo-interactive>
 
     <!-- API Viewer -->
-    <px-demo-api-viewer source="px-tabs" hide='["activateEvent","attrForSelected","fallbackSelection","selectable","selectedAttribute","selectedClass","selectedItem","items","forceSynchronousItemUpdate","indexOf","selectIndex","iron-activate","iron-items-changed","iron-select","iron-deselect"]'></px-demo-api-viewer>
+    <px-demo-api-viewer source="px-tabs" hide="[&quot;activateEvent&quot;,&quot;attrForSelected&quot;,&quot;fallbackSelection&quot;,&quot;selectable&quot;,&quot;selectedAttribute&quot;,&quot;selectedClass&quot;,&quot;selectedItem&quot;,&quot;items&quot;,&quot;forceSynchronousItemUpdate&quot;,&quot;indexOf&quot;,&quot;selectIndex&quot;,&quot;iron-activate&quot;,&quot;iron-items-changed&quot;,&quot;iron-select&quot;,&quot;iron-deselect&quot;]"></px-demo-api-viewer>
 
     <!-- Footer -->
     <px-demo-footer></px-demo-footer>
+`,
 
-  </template>
+  is: 'px-tabs-demo',
 
-</dom-module>
-<script>
-  Polymer({
-    is: 'px-tabs-demo',
+  properties: {
 
-    properties: {
-
-      props: {
-        type: Object,
-        value: function(){ return this.demoProps; }
-      },
-
-      configs: {
-        type: Array,
-        value: function(){
-          return []
-        }
-      }
+    props: {
+      type: Object,
+      value: function(){ return this.demoProps; }
     },
 
-    demoProps: {
-
-      selected: {
-        type: String,
-        defaultValue: '0',
-        inputType: 'dropdown',
-        inputChoices: ['0','1','2','3']
-      },
-
-      lightDomContent: {
-        type: String,
-        defaultValue: '<px-tab id="tab1">Bengal Tiger</px-tab><px-tab id="tab2">Black Spider Monkey</px-tab><px-tab id="tab3">Sumatran Elephant</px-tab><px-tab id="tab4">Ganges River Dolphin</px-tab>'
+    configs: {
+      type: Array,
+      value: function(){
+        return []
       }
     }
+  },
 
-  });
-</script>
+  demoProps: {
+
+    selected: {
+      type: String,
+      defaultValue: '0',
+      inputType: 'dropdown',
+      inputChoices: ['0','1','2','3']
+    },
+
+    lightDomContent: {
+      type: String,
+      defaultValue: '<px-tab id="tab1">Bengal Tiger</px-tab><px-tab id="tab2">Black Spider Monkey</px-tab><px-tab id="tab3">Sumatran Elephant</px-tab><px-tab id="tab4">Ganges River Dolphin</px-tab>'
+    }
+  }
+});

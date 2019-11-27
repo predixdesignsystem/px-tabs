@@ -1,4 +1,4 @@
-<!--
+/*
 Copyright (c) 2018, General Electric
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,15 +12,8 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
--->
-
-<link rel="import" href="../polymer/polymer.html"/>
-<link rel="import" href="../iron-selector/iron-selectable.html"/>
-<link rel="import" href="../iron-a11y-keys/iron-a11y-keys.html"/>
-<link rel="import" href="px-tab.html"/>
-<link rel="import" href="css/px-tabs-styles.html"/>
-
-<!--
+*/
+/**
 The px-tabs and px-tab components together provide the tabbed interface. The tabbed content is expected to be contained in a separate iron-pages component.
 
 Note: There is no limit on the number of tabs in a set, but there is no support for scrolling or wrapping.
@@ -56,9 +49,23 @@ Custom property | Description
 @blurb Container for px-tab elements
 @homepage index.html
 @demo index.html
--->
-<dom-module id="px-tabs">
-  <template>
+*/
+/*
+  FIXME(polymer-modulizer): the above comments were extracted
+  from HTML and may be out of place here. Review them and
+  then delete this comment!
+*/
+import '@polymer/polymer/polymer-legacy.js';
+
+import { IronSelectableBehavior } from '@polymer/iron-selector/iron-selectable.js';
+import '@polymer/iron-a11y-keys/iron-a11y-keys.js';
+import './px-tab.js';
+import './css/px-tabs-styles.js';
+import { Polymer } from '@polymer/polymer/lib/legacy/polymer-fn.js';
+import { html } from '@polymer/polymer/lib/utils/html-tag.js';
+import { dom } from '@polymer/polymer/lib/legacy/polymer.dom.js';
+Polymer({
+  _template: html`
     <style include="px-tabs-styles"></style>
 
     <div id="container" class="tabs-container" tabindex="0">
@@ -69,63 +76,59 @@ Custom property | Description
 
     <iron-a11y-keys target="[[_target]]" keys="right up" on-keys-pressed="_increment"></iron-a11y-keys>
     <iron-a11y-keys target="[[_target]]" keys="left down" on-keys-pressed="_decrement"></iron-a11y-keys>
-  </template>
-</dom-module>
+`,
 
-<script>
-  Polymer({
-    is: 'px-tabs',
+  is: 'px-tabs',
 
-    behaviors: [
-      Polymer.IronSelectableBehavior
-    ],
+  behaviors: [
+    IronSelectableBehavior
+  ],
 
-    listeners: {
-      'iron-select' : '_onIronSelect'
-    },
+  listeners: {
+    'iron-select' : '_onIronSelect'
+  },
 
-    properties: {
-      _target: {
-        type: Object,
-        value: function() {
-          return '';
-        }
+  properties: {
+    _target: {
+      type: Object,
+      value: function() {
+        return '';
       }
-    },
-
-    attached: function() {
-      this.setAttribute('role','tablist');
-      this._target = this.$.container;
-    },
-
-    /**
-     * Move forward by one tab, with wraparound from last to first.
-     */
-    _increment: function(evt) {
-      evt.detail.keyboardEvent.preventDefault();
-      this.selectNext();
-    },
-
-    /**
-     * Move backward by one tab, with wraparound from first to last.
-     */
-    _decrement: function(evt) {
-      evt.detail.keyboardEvent.preventDefault();
-      this.selectPrevious();
-    },
-
-    /**
-     * Fires an event when the tab is changed.
-     */
-    _onIronSelect: function(evt) {
-      this.fire('px-tab-changed', {
-        tabID: Polymer.dom(evt).event.detail.item.id
-      }, {bubbles: true, cancelable: false});
     }
-    /**
-     * Event fired when the selected tab is changed.
-     * evt.detail will contain the ID of the newly selected tab.
-     * @event px-tab-changed
-     */
-  });
-</script>
+  },
+
+  attached: function() {
+    this.setAttribute('role','tablist');
+    this._target = this.$.container;
+  },
+
+  /**
+   * Move forward by one tab, with wraparound from last to first.
+   */
+  _increment: function(evt) {
+    evt.detail.keyboardEvent.preventDefault();
+    this.selectNext();
+  },
+
+  /**
+   * Move backward by one tab, with wraparound from first to last.
+   */
+  _decrement: function(evt) {
+    evt.detail.keyboardEvent.preventDefault();
+    this.selectPrevious();
+  },
+
+  /**
+   * Fires an event when the tab is changed.
+   */
+  _onIronSelect: function(evt) {
+    this.fire('px-tab-changed', {
+      tabID: dom(evt).event.detail.item.id
+    }, {bubbles: true, cancelable: false});
+  }
+  /**
+   * Event fired when the selected tab is changed.
+   * evt.detail will contain the ID of the newly selected tab.
+   * @event px-tab-changed
+   */
+});

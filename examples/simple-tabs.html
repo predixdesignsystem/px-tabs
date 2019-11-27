@@ -23,22 +23,47 @@ limitations under the License.
     <title>px-tabs demo</title>
 
     <!-- Load polyfills and Polymer library -->
-    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
-    <link rel="import" href="../../polymer/polymer.html"/>
-    <link rel="import" href="../../polymer/lib/elements/dom-bind.html">
+    <script src="../../@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+    <script type="module" src="../../@polymer/polymer/polymer-legacy.js"></script>
+    <script type="module" src="../../@polymer/polymer/lib/elements/dom-bind.js"></script>
 
     <!-- Load theme -->
-    <link rel="import" href="../../px-theme/px-theme-styles.html"/>
-    <custom-style>
+    <script type="module" src="../../px-theme/px-theme-styles.js"></script>
+    <!-- FIXME(polymer-modulizer):
+        These imperative modules that innerHTML your HTML are
+        a hacky way to be sure that any mixins in included style
+        modules are ready before any elements that reference them are
+        instantiated, otherwise the CSS @apply mixin polyfill won't be
+        able to expand the underlying CSS custom properties.
+        See: https://github.com/Polymer/polymer-modulizer/issues/154
+        -->
+    <script type="module">
+const $_documentContainer = document.createElement('template');
+
+$_documentContainer.innerHTML = `<custom-style>
       <style is="custom-style" include="px-theme-styles"></style>
-    </custom-style>
+    </custom-style>`;
+
+document.body.appendChild($_documentContainer.content);
+</script>
 
     <!-- Load components -->
-    <link rel="import" href="../px-tabs.html"/>
-    <link rel="import" href="../../iron-pages/iron-pages.html" />
+    <script type="module">
+const $_documentContainer = document.createElement('template');
+$_documentContainer.innerHTML = `<link rel="import" href="../px-tabs.html">`;
+document.body.appendChild($_documentContainer.content);
+</script>/script>
+    <script type="module">
+const $_documentContainer = document.createElement('template');
+$_documentContainer.innerHTML = `<link rel="import" href="../../iron-pages/iron-pages.html">`;
+document.body.appendChild($_documentContainer.content);
+</script>es.js"></script>
   </head>
   <body>
-    <dom-bind>
+    <script type="module">
+const $_documentContainer = document.createElement('template');
+
+$_documentContainer.innerHTML = `<dom-bind>
       <template is="dom-bind">
         <px-tabs id="tab-set1" selected="{{value}}">
            <px-tab id="tab1">Bengal Tiger</px-tab>
@@ -59,6 +84,9 @@ limitations under the License.
           <div id="tab4-content"><p>Dolphins are one of the oldest creatures in the world along with some species of turtles, crocodiles and sharks. The Ganges river dolphin was officially discovered in 1801. Ganges river dolphins once lived in the Ganges-Brahmaputra-Meghna and Karnaphuli-Sangu river systems of Nepal, India, and Bangladesh. But the species is extinct from most of its early distribution ranges.</p></div>
         </iron-pages>
       </template>
-    </dom-bind>
+    </dom-bind>`;
+
+document.body.appendChild($_documentContainer.content);
+</script>
   </body>
 </html>
